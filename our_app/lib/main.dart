@@ -32,7 +32,7 @@ class MyHomePage extends StatefulWidget {
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields
-   that affect
+  //that affect
   // how it looks.
 
   // This class is the configuration for the state. It holds the values (in this
