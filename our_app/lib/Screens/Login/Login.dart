@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
-class Body extends StatelessWidget {
+class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Center(
-        child: Text('Login page'),
-      ),
+      child: Text('login page'),
     );
   }
 }

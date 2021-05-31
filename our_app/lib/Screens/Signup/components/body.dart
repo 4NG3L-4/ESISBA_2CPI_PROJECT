@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:our_app/constants.dart';
-import 'package:our_app/components/RoundedButton.dart';
-import 'package:our_app/Screens/Welcome/welcome_screen.dart';
 
 class Body extends StatelessWidget {
   final GlobalKey<FormState> _formkey = GlobalKey();
