@@ -19,17 +19,6 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   String email, password;
-  Widget _buildLogo() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 70),
-        ),
-      ],
-    );
-  }
-
   Widget _buildEmailRow() {
     return Padding(
       padding: EdgeInsets.all(8),
@@ -213,25 +202,10 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            /*Container(
-              height: MediaQuery.of(context).size.height * 0.7,
-              width: MediaQuery.of(context).size.width,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: mainColor,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: const Radius.circular(70),
-                    bottomRight: const Radius.circular(70),
-                  ),
-                ),
-              ),
-            ),*/
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                _buildLogo(),
                 _buildContainer(),
-                //_buildSignUpBtn(),
               ],
             )
           ],
