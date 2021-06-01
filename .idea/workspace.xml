@@ -23,16 +23,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc5a6a2e-987d-4d77-a335-7190392e8409" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/ESISBA_2CPI_PROJECT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ESISBA_2CPI_PROJECT.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/our_app/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/our_app/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/our_app/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/our_app/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/our_app/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/our_app/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/our_app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/our_app/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[SerialNumber@MZ6DJBWS6SIN8PJF]" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -44,7 +44,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/friendlyeats-android" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -153,6 +153,10 @@
       </Profilers>
       <method v="2" />
     </configuration>
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$USER_HOME$/AndroidStudioProjects/flutter_module/lib/main.dart" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -178,14 +182,18 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="417" y="191" width="526" height="350" key="#Notifications" timestamp="1621870236195">
+      <screen x="0" y="0" width="1366" height="731" />
+    </state>
+    <state x="417" y="191" width="526" height="350" key="#Notifications/0.0.1366.731@0.0.1366.731" timestamp="1621870236195" />
     <state x="215" y="0" width="1084" height="731" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621693590168">
       <screen x="0" y="0" width="1366" height="731" />
     </state>
     <state x="215" y="0" width="1084" height="731" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.731@0.0.1366.731" timestamp="1621693590168" />
-    <state x="465" y="124" width="428" height="484" key="FileChooserDialogImpl" timestamp="1621693375282">
+    <state x="465" y="124" width="428" height="484" key="FileChooserDialogImpl" timestamp="1621929710250">
       <screen x="0" y="0" width="1366" height="731" />
     </state>
-    <state x="465" y="124" width="428" height="484" key="FileChooserDialogImpl/0.0.1366.731@0.0.1366.731" timestamp="1621693375282" />
+    <state x="465" y="124" width="428" height="484" key="FileChooserDialogImpl/0.0.1366.731@0.0.1366.731" timestamp="1621929710250" />
     <state x="179" y="1" key="SettingsEditor" timestamp="1621693638833">
       <screen x="0" y="0" width="1366" height="731" />
     </state>

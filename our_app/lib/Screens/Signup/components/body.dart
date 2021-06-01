@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:our_app/components/RoundedButton.dart';
 import 'package:our_app/Screens/Welcome/welcome_screen.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:our_app/constants.dart';
 
 class Body extends StatelessWidget {
   final GlobalKey<FormState> _formkey = GlobalKey();
@@ -11,6 +13,7 @@ class Body extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: <Widget>[
+          //background
           Container(
             width: double.infinity,
             height: size.height,
@@ -22,14 +25,15 @@ class Body extends StatelessWidget {
               ),
             ),
           ),
+          //the big white box
           Center(
             child: Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(53),
               ),
               child: Container(
-                height: 700,
-                width: 322,
+                height: size.height * 0.92,
+                width: size.width * 0.8,
                 padding: EdgeInsets.all(16),
                 child: Form(
                   key: _formkey,
@@ -43,6 +47,22 @@ class Body extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 20, width: 20),
+                        //Sgnup and Login box
+                        Container(
+                          child: Card(
+                            color: myLightWhite,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(50),
+                            ),
+                            child: Container(
+                              height: 50,
+                              width: 300,
+                              decoration: BoxDecoration(
+                                color: myLightWhite,
+                              ),
+                            ),
+                          ),
+                        ),
                         //First name
                         TextFormField(
                           decoration: InputDecoration(labelText: 'First Name'),
@@ -132,8 +152,31 @@ class Body extends StatelessWidget {
                             );
                           },
                         ),
+                        SizedBox(height: 30, width: 20),
                         Row(
-                          children: [],
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            SvgPicture.asset(
+                              "assets/icons/facebook.svg",
+                              height: 30,
+                              width: 30,
+                              color: myDarkBlue,
+                            ),
+                            SizedBox(width: 20),
+                            SvgPicture.asset(
+                              "assets/icons/instagram.svg",
+                              height: 30,
+                              width: 30,
+                              color: myDarkBlue,
+                            ),
+                            SizedBox(width: 20),
+                            SvgPicture.asset(
+                              "assets/icons/twitter.svg",
+                              height: 30,
+                              width: 30,
+                              color: myDarkBlue,
+                            ),
+                          ],
                         ),
                       ],
                     ),
