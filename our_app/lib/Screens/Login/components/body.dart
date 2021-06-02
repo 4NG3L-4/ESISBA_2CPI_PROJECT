@@ -87,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
         Container(
           height: 1.4 * (MediaQuery.of(context).size.height / 20),
           width: 5 * (MediaQuery.of(context).size.width / 10),
-          margin: EdgeInsets.all(24),
+          margin: EdgeInsets.all(20),
           child: RaisedButton(
             elevation: 5.0,
             color: myDarkBlue,
@@ -111,7 +111,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _buildContainer() {
     return Row(
-      //mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         ClipRRect(
           borderRadius: BorderRadius.all(
@@ -119,7 +119,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
           //container white box
           child: Container(
-            height: MediaQuery.of(context).size.height * 0.65,
+            height: MediaQuery.of(context).size.height * 0.585,
             width: MediaQuery.of(context).size.width * 0.85,
             decoration: BoxDecoration(
               color: myLightWhite,
@@ -149,21 +149,21 @@ class _LoginPageState extends State<LoginPage> {
                   children: <Widget>[
                     SvgPicture.asset(
                       "assets/icons/facebook.svg",
-                      height: 30,
+                      height: 21,
                       width: 30,
                       color: myDarkBlue,
                     ),
                     SizedBox(width: 20),
                     SvgPicture.asset(
                       "assets/icons/instagram.svg",
-                      height: 30,
+                      height: 21,
                       width: 30,
                       color: myDarkBlue,
                     ),
                     SizedBox(width: 20),
                     SvgPicture.asset(
                       "assets/icons/twitter.svg",
-                      height: 30,
+                      height: 21,
                       width: 30,
                       color: myDarkBlue,
                     ),
