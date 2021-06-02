@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
         Container(
           height: 1.4 * (MediaQuery.of(context).size.height / 20),
           width: 5 * (MediaQuery.of(context).size.width / 10),
-          margin: EdgeInsets.only(bottom: 20),
+          margin: EdgeInsets.all(24),
           child: RaisedButton(
             elevation: 5.0,
             color: myDarkBlue,
@@ -118,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
           //container white box
           child: Container(
             height: MediaQuery.of(context).size.height * 0.585,
-            width: MediaQuery.of(context).size.width * 0.8,
+            width: MediaQuery.of(context).size.width * 0.85,
             decoration: BoxDecoration(
               color: myLightWhite,
             ),
@@ -155,7 +155,7 @@ class _LoginPageState extends State<LoginPage> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Padding(
-          padding: EdgeInsets.only(top: 40),
+          padding: EdgeInsets.only(top: 20),
           child: FlatButton(
             onPressed: () {},
             child: RichText(
