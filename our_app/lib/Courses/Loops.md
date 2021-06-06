@@ -27,6 +27,7 @@ simple statement or a group of statements.
    >for i:= 1 to 10 do writeln(i);
 
 - ### Flow Diagram:
+  ![](https://www.tutorialspoint.com/pascal/images/pascal_for_do_loop.jpg)
   
   
 ## 2. While-do loop:
@@ -47,6 +48,7 @@ end;
       
 When the condition becomes false, program control passes to the line immediately    following the loop.
 - ### Flow Diagram:
+  ![](https://www.tutorialspoint.com/pascal/images/pascal_while_do_loop.jpg)
 
 
 ## 3. Repeat-until loop: 
@@ -70,6 +72,7 @@ until number = 0;
 The statement(s) in the loop execute once before the condition is tested.
 If the condition is false, the flow of control jumps back up to repeat, and the statement(s) in the loop execute again. This process repeats until the given condition becomes true.
 - ### Flow Diagram:
+  ![](https://www.tutorialspoint.com/pascal/images/pascal_repeat_until_loop.jpg)
  
 
 
