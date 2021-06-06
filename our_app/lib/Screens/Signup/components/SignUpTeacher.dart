@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:our_app/components/RoundedButton.dart';
-import 'package:our_app/Screens/Welcome/welcome_screen.dart';
+import 'package:our_app/Screens/Principale/PrincipaleTeacher.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:our_app/constants.dart';
 import 'package:our_app/Screens/Login/login_screen.dart';
@@ -148,7 +148,7 @@ class SignUpTeacherScreen extends StatelessWidget {
                                     TextSpan(
                                       text: 'You already have an account? ',
                                       style: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.black.withOpacity(0.6),
                                         /*fontSize:
                                             MediaQuery.of(context).size.height /
                                                 60,*/
@@ -180,7 +180,7 @@ class SignUpTeacherScreen extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return WelcomeScreen();
+                                  return PrincipaleTeacherScreen();
                                 },
                               ),
                             );

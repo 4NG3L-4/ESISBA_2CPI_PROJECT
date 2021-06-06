@@ -31,6 +31,7 @@ class SignUpStudentScreen extends StatelessWidget {
             widthFactor: double.infinity,
             heightFactor: double.infinity,
             child: Card(
+              color: myLightWhite,
               margin: EdgeInsets.all(20),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(53),
@@ -46,7 +47,7 @@ class SignUpStudentScreen extends StatelessWidget {
                       children: <Widget>[
                         SizedBox(height: 20),
                         Text(
-                          'TEACHER',
+                          'STUDENT',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                           ),
@@ -78,7 +79,7 @@ class SignUpStudentScreen extends StatelessWidget {
                         SizedBox(height: 20, width: 20),
                         //Speciality
                         TextFormField(
-                          decoration: InputDecoration(labelText: 'Speciality'),
+                          decoration: InputDecoration(labelText: 'birthday'),
                           validator: (value) {
                             if (value.isEmpty) {
                               return 'mandatory';
@@ -147,7 +148,7 @@ class SignUpStudentScreen extends StatelessWidget {
                                     TextSpan(
                                       text: 'You already have an account? ',
                                       style: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.black.withOpacity(0.6),
                                         /*fontSize:
                                             MediaQuery.of(context).size.height /
                                                 60,*/

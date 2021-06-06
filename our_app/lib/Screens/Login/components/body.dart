@@ -67,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        FlatButton(
+        TextButton(
           onPressed: () {},
           child: Text(
             "Forget Password ?",
