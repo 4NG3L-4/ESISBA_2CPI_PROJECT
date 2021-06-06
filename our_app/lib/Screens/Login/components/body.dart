@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:our_app/Screens/Signup/SignUpScreen.dart';
 import 'package:our_app/constants.dart';
+import 'package:flutter_svg/svg.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -85,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
         Container(
           height: 1.4 * (MediaQuery.of(context).size.height / 20),
           width: 5 * (MediaQuery.of(context).size.width / 10),
-          margin: EdgeInsets.only(bottom: 20),
+          margin: EdgeInsets.all(20),
           child: RaisedButton(
             elevation: 5.0,
             color: myDarkBlue,
@@ -117,10 +119,10 @@ class _LoginPageState extends State<LoginPage> {
           ),
           //container white box
           child: Container(
-            height: MediaQuery.of(context).size.height * 0.6,
-            width: MediaQuery.of(context).size.width * 0.8,
+            height: MediaQuery.of(context).size.height * 0.585,
+            width: MediaQuery.of(context).size.width * 0.85,
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: myLightWhite,
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -142,6 +144,31 @@ class _LoginPageState extends State<LoginPage> {
                 _buildForgetPasswordButton(),
                 _buildLoginButton(),
                 _buildSignUpBtn(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    SvgPicture.asset(
+                      "assets/icons/facebook.svg",
+                      height: 21,
+                      width: 30,
+                      color: myDarkBlue,
+                    ),
+                    SizedBox(width: 20),
+                    SvgPicture.asset(
+                      "assets/icons/instagram.svg",
+                      height: 21,
+                      width: 30,
+                      color: myDarkBlue,
+                    ),
+                    SizedBox(width: 20),
+                    SvgPicture.asset(
+                      "assets/icons/twitter.svg",
+                      height: 21,
+                      width: 30,
+                      color: myDarkBlue,
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
@@ -154,31 +181,40 @@ class _LoginPageState extends State<LoginPage> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Padding(
-          padding: EdgeInsets.only(top: 40),
-          child: FlatButton(
-            onPressed: () {},
-            child: RichText(
-              text: TextSpan(children: [
-                TextSpan(
-                  text: 'Dont have an account? ',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: MediaQuery.of(context).size.height / 40,
-                    fontWeight: FontWeight.w400,
-                  ),
+        Row(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: FlatButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignUpScreen()),
+                  );
+                },
+                child: RichText(
+                  text: TextSpan(children: [
+                    TextSpan(
+                      text: 'Dont have an account? ',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: MediaQuery.of(context).size.height / 40,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'Sign Up',
+                      style: TextStyle(
+                        color: Color.fromRGBO(101, 141, 218, 1),
+                        fontSize: MediaQuery.of(context).size.height / 40,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                  ]),
                 ),
-                TextSpan(
-                  text: 'Sign Up',
-                  style: TextStyle(
-                    color: Color.fromRGBO(101, 141, 218, 1),
-                    fontSize: MediaQuery.of(context).size.height / 40,
-                    fontWeight: FontWeight.bold,
-                  ),
-                )
-              ]),
+              ),
             ),
-          ),
+          ],
         ),
       ],
     );
