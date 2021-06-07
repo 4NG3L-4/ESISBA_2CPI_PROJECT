@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:our_app/Screens/Principale/PrincipaleTeacher.dart';
 import 'package:our_app/constants.dart';
 
 class ProfileTeacherScreen extends StatefulWidget {
@@ -8,7 +9,7 @@ class ProfileTeacherScreen extends StatefulWidget {
 }
 
 class _ProfileTeacherScreenState extends State<ProfileTeacherScreen> {
-  int _selectedItemIndex = 0;
+  int _selectedItemIndex = 4;
 
   @override
   Widget build(BuildContext context) {
@@ -92,37 +93,248 @@ class _ProfileTeacherScreenState extends State<ProfileTeacherScreen> {
                     mainAxisSpacing: 20.0,
                     childAspectRatio: 0.85,
                     children: <Widget>[
+                      //First Card
                       Container(
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                              child: Text(
+                                "Course 1",
+                                style: TextStyle(
+                                  color: Colors.black.withOpacity(0.6),
+                                  fontSize: 17,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.fromLTRB(10, 60, 10, 0),
+                              child: Text(
+                                "While Loop",
+                                style: TextStyle(
+                                  color: Colors.black.withOpacity(0.6),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.fromLTRB(10, 50, 10, 10),
+                              child: Text(
+                                "May 2020",
+                                style: TextStyle(
+                                  color: Colors.black.withOpacity(0.6),
+                                  fontSize: 17,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                         decoration: BoxDecoration(
                           color: myLightWhite,
                           borderRadius: BorderRadius.circular(32),
                         ),
                       ),
                       Container(
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                              child: Text(
+                                "Course 2",
+                                style: TextStyle(
+                                  color: Colors.black.withOpacity(0.6),
+                                  fontSize: 17,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.fromLTRB(10, 60, 10, 0),
+                              child: Text(
+                                "Variables",
+                                style: TextStyle(
+                                  color: Colors.black.withOpacity(0.6),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.fromLTRB(10, 50, 10, 10),
+                              child: Text(
+                                "May 2020",
+                                style: TextStyle(
+                                  color: Colors.black.withOpacity(0.6),
+                                  fontSize: 17,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                         decoration: BoxDecoration(
                           color: myLightWhite,
                           borderRadius: BorderRadius.circular(32),
                         ),
                       ),
                       Container(
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                              child: Text(
+                                "Course 3",
+                                style: TextStyle(
+                                  color: Colors.black.withOpacity(0.6),
+                                  fontSize: 17,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.fromLTRB(10, 60, 10, 0),
+                              child: Text(
+                                "For Loop",
+                                style: TextStyle(
+                                  color: Colors.black.withOpacity(0.6),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.fromLTRB(10, 50, 10, 10),
+                              child: Text(
+                                "May 2020",
+                                style: TextStyle(
+                                  color: Colors.black.withOpacity(0.6),
+                                  fontSize: 17,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                         decoration: BoxDecoration(
                           color: myLightWhite,
                           borderRadius: BorderRadius.circular(32),
                         ),
                       ),
                       Container(
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                              child: Text(
+                                "Course 4",
+                                style: TextStyle(
+                                  color: Colors.black.withOpacity(0.6),
+                                  fontSize: 17,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.fromLTRB(10, 60, 10, 0),
+                              child: Text(
+                                "If Else Statment",
+                                style: TextStyle(
+                                  color: Colors.black.withOpacity(0.6),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.fromLTRB(10, 50, 10, 10),
+                              child: Text(
+                                "May 2020",
+                                style: TextStyle(
+                                  color: Colors.black.withOpacity(0.6),
+                                  fontSize: 17,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                         decoration: BoxDecoration(
                           color: myLightWhite,
                           borderRadius: BorderRadius.circular(32),
                         ),
                       ),
                       Container(
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                              child: Text(
+                                "Course 1",
+                                style: TextStyle(
+                                  color: Colors.black.withOpacity(0.6),
+                                  fontSize: 17,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.fromLTRB(10, 60, 10, 0),
+                              child: Text(
+                                "While Loop",
+                                style: TextStyle(
+                                  color: Colors.black.withOpacity(0.6),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.fromLTRB(10, 50, 10, 10),
+                              child: Text(
+                                "May 2020",
+                                style: TextStyle(
+                                  color: Colors.black.withOpacity(0.6),
+                                  fontSize: 17,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                         decoration: BoxDecoration(
                           color: myLightWhite,
                           borderRadius: BorderRadius.circular(32),
                         ),
                       ),
                       Container(
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                              child: Text(
+                                "Course 1",
+                                style: TextStyle(
+                                  color: Colors.black.withOpacity(0.6),
+                                  fontSize: 17,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.fromLTRB(10, 60, 10, 0),
+                              child: Text(
+                                "While Loop",
+                                style: TextStyle(
+                                  color: Colors.black.withOpacity(0.6),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.fromLTRB(10, 50, 10, 10),
+                              child: Text(
+                                "May 2020",
+                                style: TextStyle(
+                                  color: Colors.black.withOpacity(0.6),
+                                  fontSize: 17,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                         decoration: BoxDecoration(
                           color: myLightWhite,
                           borderRadius: BorderRadius.circular(32),
@@ -138,17 +350,17 @@ class _ProfileTeacherScreenState extends State<ProfileTeacherScreen> {
       ),
       bottomNavigationBar: Row(
         children: <Widget>[
-          buildBarNavItem(Icons.home, 0),
-          buildBarNavItem(Icons.chat_bubble, 1),
-          buildBarNavItem(Icons.notifications, 2),
-          buildBarNavItem(Icons.search, 3),
-          buildBarNavItem(Icons.person, 4),
+          buildBarNavItem(Icons.home, 0, PrincipaleTeacherScreen()),
+          buildBarNavItem(Icons.chat_bubble, 1, PrincipaleTeacherScreen()),
+          buildBarNavItem(Icons.notifications, 2, PrincipaleTeacherScreen()),
+          buildBarNavItem(Icons.search, 3, PrincipaleTeacherScreen()),
+          buildBarNavItem(Icons.person, 4, ProfileTeacherScreen()),
         ],
       ),
     );
   }
 
-  Widget buildBarNavItem(IconData icon, int index) {
+  Widget buildBarNavItem(IconData icon, int index, Widget page) {
     return GestureDetector(
       onTap: () {
         setState(() {
