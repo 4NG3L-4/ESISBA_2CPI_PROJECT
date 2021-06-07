@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:our_app/components/RoundedButton.dart';
-import 'package:our_app/Screens/Principale/PrincipaleTeacher.dart';
+import 'package:our_app/Screens/Profile/ProfileTeacher.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:our_app/constants.dart';
 import 'package:our_app/Screens/Login/login_screen.dart';
@@ -180,7 +180,7 @@ class SignUpTeacherScreen extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return PrincipaleTeacherScreen();
+                                  return ProfileTeacherScreen();
                                 },
                               ),
                             );
