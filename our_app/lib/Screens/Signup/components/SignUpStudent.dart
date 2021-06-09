@@ -7,6 +7,8 @@ import 'package:our_app/Screens/Login/login_screen.dart';
 
 class SignUpStudentScreen extends StatelessWidget {
   final GlobalKey<FormState> _formkey = GlobalKey();
+  final _passwordcontroller = TextEditingController();
+  final _confirmpasswordcontroller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +57,14 @@ class SignUpStudentScreen extends StatelessWidget {
                         SizedBox(height: 20, width: 20),
                         //First name
                         TextFormField(
-                          decoration: InputDecoration(labelText: 'First Name'),
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          cursorColor: myLightBlue,
+                          decoration: InputDecoration(
+                            labelText: 'First Name',
+                            labelStyle: TextStyle(
+                              color: myLightBlue,
+                            ),
+                          ),
                           validator: (value) {
                             if (value.isEmpty) {
                               return 'mandatory';
@@ -67,7 +76,14 @@ class SignUpStudentScreen extends StatelessWidget {
                         SizedBox(height: 20, width: 20),
                         //Last name
                         TextFormField(
-                          decoration: InputDecoration(labelText: 'Last Name'),
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          cursorColor: myLightBlue,
+                          decoration: InputDecoration(
+                            labelText: 'Last Name',
+                            labelStyle: TextStyle(
+                              color: myLightBlue,
+                            ),
+                          ),
                           validator: (value) {
                             if (value.isEmpty) {
                               return 'mandatory';
@@ -77,24 +93,20 @@ class SignUpStudentScreen extends StatelessWidget {
                           onSaved: (value) {},
                         ),
                         SizedBox(height: 20, width: 20),
-                        //Speciality
-                        TextFormField(
-                          decoration: InputDecoration(labelText: 'birthday'),
-                          validator: (value) {
-                            if (value.isEmpty) {
-                              return 'mandatory';
-                            }
-                            return null;
-                          },
-                          onSaved: (value) {},
-                        ),
-                        SizedBox(height: 20, width: 20),
+
                         //email
                         TextFormField(
-                          decoration: InputDecoration(labelText: 'Email'),
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          cursorColor: myLightBlue,
+                          decoration: InputDecoration(
+                            labelText: 'Email',
+                            labelStyle: TextStyle(
+                              color: myLightBlue,
+                            ),
+                          ),
                           keyboardType: TextInputType.emailAddress,
                           validator: (value) {
-                            if (value.isEmpty || value.contains('@')) {
+                            if (value.isEmpty || !value.contains('@')) {
                               return 'invalid email';
                             }
                             return null;
@@ -104,10 +116,18 @@ class SignUpStudentScreen extends StatelessWidget {
                         SizedBox(height: 20, width: 20),
                         //password
                         TextFormField(
-                          decoration: InputDecoration(labelText: 'password'),
+                          controller: _passwordcontroller,
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          cursorColor: myLightBlue,
+                          decoration: InputDecoration(
+                            labelText: 'password',
+                            labelStyle: TextStyle(
+                              color: myLightBlue,
+                            ),
+                          ),
                           obscureText: true,
                           validator: (value) {
-                            if (value.isEmpty || value.length <= 5) {
+                            if (value.isEmpty || value.length < 5) {
                               return 'invalid password';
                             }
                             return null;
@@ -117,12 +137,22 @@ class SignUpStudentScreen extends StatelessWidget {
                         SizedBox(height: 20, width: 20),
                         //confirm password
                         TextFormField(
-                          decoration:
-                              InputDecoration(labelText: 'Confirm password'),
+                          controller: _confirmpasswordcontroller,
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          cursorColor: myLightBlue,
+                          decoration: InputDecoration(
+                            labelText: 'Confirm password',
+                            labelStyle: TextStyle(
+                              color: myLightBlue,
+                            ),
+                          ),
                           obscureText: true,
                           validator: (value) {
-                            if (value.isEmpty || value.length <= 5) {
+                            if (value.isEmpty || value.length < 5) {
                               return 'invalid password';
+                            } else if (value !=
+                                _passwordcontroller.value.text) {
+                              return 'passwords do not match';
                             }
                             return null;
                           },
@@ -176,14 +206,16 @@ class SignUpStudentScreen extends StatelessWidget {
                         RoundedButton(
                           text: "Sign Up",
                           press: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return WelcomeScreen();
-                                },
-                              ),
-                            );
+                            if (_formkey.currentState.validate()) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return WelcomeScreen();
+                                  },
+                                ),
+                              );
+                            }
                           },
                         ),
                         SizedBox(height: 30, width: 20),
