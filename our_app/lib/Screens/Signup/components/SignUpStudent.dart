@@ -106,8 +106,13 @@ class SignUpStudentScreen extends StatelessWidget {
                           ),
                           keyboardType: TextInputType.emailAddress,
                           validator: (value) {
-                            if (value.isEmpty || !value.contains('@')) {
+                            if (value.isEmpty) {
                               return 'invalid email';
+                            }
+                            if (!RegExp(
+                                    r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                .hasMatch(value)) {
+                              return 'Invalid Email';
                             }
                             return null;
                           },

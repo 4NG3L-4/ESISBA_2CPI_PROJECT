@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:our_app/Screens/Principale/PrincipaleTeacher.dart';
 import 'package:our_app/constants.dart';
 
 class ProfileTeacherScreen extends StatefulWidget {
@@ -9,8 +8,6 @@ class ProfileTeacherScreen extends StatefulWidget {
 }
 
 class _ProfileTeacherScreenState extends State<ProfileTeacherScreen> {
-  int _selectedItemIndex = 4;
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -347,50 +344,6 @@ class _ProfileTeacherScreenState extends State<ProfileTeacherScreen> {
             ),
           ),
         ],
-      ),
-      bottomNavigationBar: Row(
-        children: <Widget>[
-          buildBarNavItem(Icons.home, 0, PrincipaleTeacherScreen()),
-          buildBarNavItem(Icons.chat_bubble, 1, PrincipaleTeacherScreen()),
-          buildBarNavItem(Icons.notifications, 2, PrincipaleTeacherScreen()),
-          buildBarNavItem(Icons.search, 3, PrincipaleTeacherScreen()),
-          buildBarNavItem(Icons.person, 4, ProfileTeacherScreen()),
-        ],
-      ),
-    );
-  }
-
-  Widget buildBarNavItem(IconData icon, int index, Widget page) {
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          _selectedItemIndex = index;
-        });
-      },
-      child: Container(
-        height: 60,
-        width: MediaQuery.of(context).size.width / 5,
-        decoration: index == _selectedItemIndex
-            ? BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(width: 4, color: myDarkBlue),
-                ),
-                gradient: LinearGradient(
-                  colors: [
-                    myDarkBlue.withOpacity(0.3),
-                    myDarkBlue.withOpacity(0.015),
-                  ],
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                ),
-              )
-            : BoxDecoration(),
-        child: Icon(
-          icon,
-          color: index == _selectedItemIndex
-              ? Colors.black.withOpacity(0.6)
-              : myDarkBlue,
-        ),
       ),
     );
   }

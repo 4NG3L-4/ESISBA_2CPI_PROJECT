@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:our_app/components/RoundedButton.dart';
-import 'package:our_app/Screens/Profile/ProfileTeacher.dart';
+import 'package:our_app/Screens/Principale/Principale.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:our_app/constants.dart';
 import 'package:our_app/Screens/Login/login_screen.dart';
@@ -124,8 +124,13 @@ class SignUpTeacherScreen extends StatelessWidget {
                           ),
                           keyboardType: TextInputType.emailAddress,
                           validator: (value) {
-                            if (value.isEmpty || !value.contains('@')) {
-                              return 'invalid email';
+                            if (value.isEmpty) {
+                              return 'Enter Email';
+                            }
+                            if (!RegExp(
+                                    r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                .hasMatch(value)) {
+                              return 'Invalid Email';
                             }
                             return null;
                           },
@@ -229,7 +234,7 @@ class SignUpTeacherScreen extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return ProfileTeacherScreen();
+                                    return PrincipaleScreen();
                                   },
                                 ),
                               );
