@@ -40,126 +40,128 @@ class SignUpBothScreen extends StatelessWidget {
             Positioned(
               bottom: 0,
               height: 0.67 * (size.height),
-              child: Container(
-                child: Card(
-                  color: myLightWhite,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(53),
-                  ),
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(
-                        width: size.width,
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(30, 11, 0, 0),
-                          child: Text(
-                            "Sign Up",
-                            style: TextStyle(
-                              color: Colors.black.withOpacity(0.6),
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 80),
-                      RoundedButton(
-                        text: "Teacher",
-                        sizee: 25,
-                        press: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return SignUpTeacherScreen();
-                              },
-                            ),
-                          );
-                        },
-                      ),
-                      OrDivider(),
-                      RoundedButton(
-                        text: "Student",
-                        sizee: 25,
-                        press: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return SignUpStudentScreen();
-                              },
-                            ),
-                          );
-                        },
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(top: 40),
-                            child: TextButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => LoginScreen()),
-                                );
-                              },
-                              child: RichText(
-                                text: TextSpan(children: [
-                                  TextSpan(
-                                    text: 'You already have an account? ',
-                                    style: TextStyle(
-                                      color: Colors.black.withOpacity(0.6),
-                                      /*fontSize:
-                                                  MediaQuery.of(context).size.height /
-                                                      60,*/
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text: 'Log In',
-                                    style: TextStyle(
-                                      color: Color.fromRGBO(101, 141, 218, 1),
-                                      /*fontSize:
-                                                  MediaQuery.of(context).size.height /
-                                                      60,*/
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  )
-                                ]),
+              child: SingleChildScrollView(
+                child: Container(
+                  child: Card(
+                    color: myLightWhite,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(53),
+                    ),
+                    child: Column(
+                      children: <Widget>[
+                        SizedBox(
+                          width: size.width,
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(30, 11, 0, 0),
+                            child: Text(
+                              "Sign Up",
+                              style: TextStyle(
+                                color: Colors.black.withOpacity(0.6),
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),
-                        ],
-                      ),
-                      SizedBox(height: 20),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          SvgPicture.asset(
-                            "assets/icons/facebook.svg",
-                            height: 30,
-                            width: 30,
-                            color: myDarkBlue,
-                          ),
-                          SizedBox(width: 20),
-                          SvgPicture.asset(
-                            "assets/icons/instagram.svg",
-                            height: 30,
-                            width: 30,
-                            color: myDarkBlue,
-                          ),
-                          SizedBox(width: 20),
-                          SvgPicture.asset(
-                            "assets/icons/twitter.svg",
-                            height: 30,
-                            width: 30,
-                            color: myDarkBlue,
-                          ),
-                        ],
-                      ),
-                    ],
+                        ),
+                        SizedBox(height: 80),
+                        RoundedButton(
+                          text: "Teacher",
+                          sizee: 25,
+                          press: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return SignUpTeacherScreen();
+                                },
+                              ),
+                            );
+                          },
+                        ),
+                        OrDivider(),
+                        RoundedButton(
+                          text: "Student",
+                          sizee: 25,
+                          press: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return SignUpStudentScreen();
+                                },
+                              ),
+                            );
+                          },
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(top: 40),
+                              child: TextButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => LoginScreen()),
+                                  );
+                                },
+                                child: RichText(
+                                  text: TextSpan(children: [
+                                    TextSpan(
+                                      text: 'You already have an account? ',
+                                      style: TextStyle(
+                                        color: Colors.black.withOpacity(0.6),
+                                        /*fontSize:
+                                                    MediaQuery.of(context).size.height /
+                                                        60,*/
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: 'Log In',
+                                      style: TextStyle(
+                                        color: Color.fromRGBO(101, 141, 218, 1),
+                                        /*fontSize:
+                                                    MediaQuery.of(context).size.height /
+                                                        60,*/
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    )
+                                  ]),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            SvgPicture.asset(
+                              "assets/icons/facebook.svg",
+                              height: 30,
+                              width: 30,
+                              color: myDarkBlue,
+                            ),
+                            SizedBox(width: 20),
+                            SvgPicture.asset(
+                              "assets/icons/instagram.svg",
+                              height: 30,
+                              width: 30,
+                              color: myDarkBlue,
+                            ),
+                            SizedBox(width: 20),
+                            SvgPicture.asset(
+                              "assets/icons/twitter.svg",
+                              height: 30,
+                              width: 30,
+                              color: myDarkBlue,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

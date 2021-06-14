@@ -107,7 +107,7 @@ class SignUpStudentScreen extends StatelessWidget {
                           keyboardType: TextInputType.emailAddress,
                           validator: (value) {
                             if (value.isEmpty) {
-                              return 'invalid email';
+                              return 'Enter your email please';
                             }
                             if (!RegExp(
                                     r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
@@ -133,7 +133,7 @@ class SignUpStudentScreen extends StatelessWidget {
                           obscureText: true,
                           validator: (value) {
                             if (value.isEmpty || value.length < 5) {
-                              return 'invalid password';
+                              return 'password must be more than 4 characters';
                             }
                             return null;
                           },
@@ -154,7 +154,7 @@ class SignUpStudentScreen extends StatelessWidget {
                           obscureText: true,
                           validator: (value) {
                             if (value.isEmpty || value.length < 5) {
-                              return 'invalid password';
+                              return 'password must be more than 4 characters';
                             } else if (value !=
                                 _passwordcontroller.value.text) {
                               return 'passwords do not match';

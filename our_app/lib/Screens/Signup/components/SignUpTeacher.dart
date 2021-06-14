@@ -1,14 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:our_app/Screens/Profile/ProfileTeacher.dart';
 import 'package:our_app/components/RoundedButton.dart';
 import 'package:our_app/Screens/Principale/Principale.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:our_app/constants.dart';
 import 'package:our_app/Screens/Login/login_screen.dart';
 
-class SignUpTeacherScreen extends StatelessWidget {
+class SignUpTeacherScreen extends StatefulWidget {
+  @override
+  _SignUpTeacherScreenState createState() => _SignUpTeacherScreenState();
+}
+
+class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
   final GlobalKey<FormState> _formkey = GlobalKey();
+
   final _passwordcontroller = TextEditingController();
+
   final _confirmpasswordcontroller = TextEditingController();
+
+  var _textcontroller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +67,7 @@ class SignUpTeacherScreen extends StatelessWidget {
                         SizedBox(height: 20, width: 20),
                         //First name
                         TextFormField(
+                          controller: _textcontroller,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           cursorColor: myLightBlue,
                           decoration: InputDecoration(
@@ -71,7 +82,6 @@ class SignUpTeacherScreen extends StatelessWidget {
                             }
                             return null;
                           },
-                          onSaved: (value) {},
                         ),
                         SizedBox(height: 20, width: 20),
                         //Last name
@@ -125,7 +135,7 @@ class SignUpTeacherScreen extends StatelessWidget {
                           keyboardType: TextInputType.emailAddress,
                           validator: (value) {
                             if (value.isEmpty) {
-                              return 'Enter Email';
+                              return 'Enter your email please';
                             }
                             if (!RegExp(
                                     r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
@@ -151,7 +161,7 @@ class SignUpTeacherScreen extends StatelessWidget {
                           obscureText: true,
                           validator: (value) {
                             if (value.isEmpty || value.length < 5) {
-                              return 'invalid password';
+                              return 'password must be more than 4 characters';
                             }
                             return null;
                           },
@@ -172,7 +182,7 @@ class SignUpTeacherScreen extends StatelessWidget {
                           obscureText: true,
                           validator: (value) {
                             if (value.isEmpty || value.length < 5) {
-                              return 'invalid password';
+                              return 'password must be more than 4 characters';
                             } else if (value !=
                                 _passwordcontroller.value.text) {
                               return 'passwords do not match';
@@ -202,9 +212,6 @@ class SignUpTeacherScreen extends StatelessWidget {
                                       text: 'You already have an account? ',
                                       style: TextStyle(
                                         color: Colors.black.withOpacity(0.6),
-                                        /*fontSize:
-                                            MediaQuery.of(context).size.height /
-                                                60,*/
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -212,9 +219,6 @@ class SignUpTeacherScreen extends StatelessWidget {
                                       text: 'Log In',
                                       style: TextStyle(
                                         color: Color.fromRGBO(101, 141, 218, 1),
-                                        /*fontSize:
-                                            MediaQuery.of(context).size.height /
-                                                60,*/
                                         fontWeight: FontWeight.bold,
                                       ),
                                     )
@@ -230,10 +234,14 @@ class SignUpTeacherScreen extends StatelessWidget {
                           text: "Sign Up",
                           press: () {
                             if (_formkey.currentState.validate()) {
+                              var yup = _textcontroller.text;
+
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
+                                    ProfileTeacherScreen(value: yup);
+                                    print("yeess! $yup");
                                     return PrincipaleScreen();
                                   },
                                 ),
