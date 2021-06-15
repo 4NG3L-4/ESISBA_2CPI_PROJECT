@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:our_app/Screens/Principale/PrincipaleTeacher.dart';
-import 'package:our_app/constants.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
