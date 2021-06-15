@@ -1,14 +1,19 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:our_app/components/RoundedButton.dart';
 import 'package:our_app/Screens/Welcome/welcome_screen.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:our_app/constants.dart';
 import 'package:our_app/Screens/Login/login_screen.dart';
+import 'package:our_app/Services/auth.dart';
 
 class SignUpStudentScreen extends StatelessWidget {
   final GlobalKey<FormState> _formkey = GlobalKey();
-  final _passwordcontroller = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _emailController = TextEditingController();
   final _confirmpasswordcontroller = TextEditingController();
+  final AuthenticationService _auth = AuthenticationService();
 
   @override
   Widget build(BuildContext context) {
@@ -96,6 +101,7 @@ class SignUpStudentScreen extends StatelessWidget {
 
                         //email
                         TextFormField(
+                          controller: _emailController,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           cursorColor: myLightBlue,
                           decoration: InputDecoration(
@@ -121,7 +127,7 @@ class SignUpStudentScreen extends StatelessWidget {
                         SizedBox(height: 20, width: 20),
                         //password
                         TextFormField(
-                          controller: _passwordcontroller,
+                          controller: _passwordController,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           cursorColor: myLightBlue,
                           decoration: InputDecoration(
@@ -132,7 +138,7 @@ class SignUpStudentScreen extends StatelessWidget {
                           ),
                           obscureText: true,
                           validator: (value) {
-                            if (value.isEmpty || value.length < 5) {
+                            if (value.isEmpty || value.length < 7) {
                               return 'invalid password';
                             }
                             return null;
@@ -153,10 +159,10 @@ class SignUpStudentScreen extends StatelessWidget {
                           ),
                           obscureText: true,
                           validator: (value) {
-                            if (value.isEmpty || value.length < 5) {
+                            if (value.isEmpty || value.length < 7) {
                               return 'invalid password';
                             } else if (value !=
-                                _passwordcontroller.value.text) {
+                                _passwordController.value.text) {
                               return 'passwords do not match';
                             }
                             return null;
@@ -212,6 +218,7 @@ class SignUpStudentScreen extends StatelessWidget {
                           text: "Sign Up",
                           press: () {
                             if (_formkey.currentState.validate()) {
+                              createUser(); //creation of user
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -259,5 +266,23 @@ class SignUpStudentScreen extends StatelessWidget {
         ],
       ),
     );
-  }
+    
+}
+
+// *************************************************************
+  void createUser() async {
+    dynamic result = await _auth.createNewUser(
+       _emailController.text, _passwordController.text);
+    if (result == null) {
+      print('Email is not valid');
+    } else {
+      print(result.toString());
+      _passwordController.clear();
+      _emailController.clear();
+                               
+                            
+    }
+
+}
+ 
 }
