@@ -14,18 +14,13 @@ class SignUpTeacherScreen extends StatefulWidget {
 
 class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
   final GlobalKey<FormState> _formkey = GlobalKey();
-<<<<<<< HEAD
   final _passwordController = TextEditingController();
   final _emailController = TextEditingController();
-=======
-
-  final _passwordcontroller = TextEditingController();
-
->>>>>>> 2068429f27c5d28d49be31b27ede126a2b015aa2
   final _confirmpasswordcontroller = TextEditingController();
   final AuthenticationService _auth = AuthenticationService();
 
   var _textcontroller = TextEditingController();
+  String yup;
 
   @override
   Widget build(BuildContext context) {
@@ -168,13 +163,8 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
                           ),
                           obscureText: true,
                           validator: (value) {
-<<<<<<< HEAD
                             if (value.isEmpty || value.length < 7) {
                               return 'invalid password';
-=======
-                            if (value.isEmpty || value.length < 5) {
-                              return 'password must be more than 4 characters';
->>>>>>> 2068429f27c5d28d49be31b27ede126a2b015aa2
                             }
                             return null;
                           },
@@ -194,13 +184,8 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
                           ),
                           obscureText: true,
                           validator: (value) {
-<<<<<<< HEAD
                             if (value.isEmpty || value.length < 7) {
                               return 'invalid password';
-=======
-                            if (value.isEmpty || value.length < 5) {
-                              return 'password must be more than 4 characters';
->>>>>>> 2068429f27c5d28d49be31b27ede126a2b015aa2
                             } else if (value !=
                                 _passwordController.value.text) {
                               return 'passwords do not match';
@@ -252,12 +237,7 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
                           text: "Sign Up",
                           press: () {
                             if (_formkey.currentState.validate()) {
-<<<<<<< HEAD
                                createUser();
-=======
-                              var yup = _textcontroller.text;
-
->>>>>>> 2068429f27c5d28d49be31b27ede126a2b015aa2
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -319,6 +299,7 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
       print(result.toString());
       _passwordController.clear();
       _emailController.clear();
+      Navigator.pop(context);
     }
 
 }

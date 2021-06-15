@@ -138,17 +138,13 @@ class SignUpStudentScreen extends StatelessWidget {
                           ),
                           obscureText: true,
                           validator: (value) {
-<<<<<<< HEAD
                             if (value.isEmpty || value.length < 7) {
                               return 'invalid password';
-=======
-                            if (value.isEmpty || value.length < 5) {
-                              return 'password must be more than 4 characters';
->>>>>>> 2068429f27c5d28d49be31b27ede126a2b015aa2
                             }
                             return null;
+                          
+                         
                           },
-                          onSaved: (value) {},
                         ),
                         SizedBox(height: 20, width: 20),
                         //confirm password
@@ -164,13 +160,8 @@ class SignUpStudentScreen extends StatelessWidget {
                           ),
                           obscureText: true,
                           validator: (value) {
-<<<<<<< HEAD
                             if (value.isEmpty || value.length < 7) {
                               return 'invalid password';
-=======
-                            if (value.isEmpty || value.length < 5) {
-                              return 'password must be more than 4 characters';
->>>>>>> 2068429f27c5d28d49be31b27ede126a2b015aa2
                             } else if (value !=
                                 _passwordController.value.text) {
                               return 'passwords do not match';
@@ -289,6 +280,7 @@ class SignUpStudentScreen extends StatelessWidget {
       print(result.toString());
       _passwordController.clear();
       _emailController.clear();
+     // Navigator.pop(context);
                                
                             
     }
