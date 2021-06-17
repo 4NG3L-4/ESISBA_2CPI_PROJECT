@@ -5,6 +5,7 @@ import 'package:our_app/Screens/Principale/Principale.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:our_app/constants.dart';
 import 'package:our_app/Screens/Login/login_screen.dart';
+import 'package:our_app/Services/auth.dart';
 
 class SignUpTeacherScreen extends StatefulWidget {
   @override
@@ -13,12 +14,13 @@ class SignUpTeacherScreen extends StatefulWidget {
 
 class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
   final GlobalKey<FormState> _formkey = GlobalKey();
-
-  final _passwordcontroller = TextEditingController();
-
+  final _passwordController = TextEditingController();
+  final _emailController = TextEditingController();
   final _confirmpasswordcontroller = TextEditingController();
+  final AuthenticationService _auth = AuthenticationService();
 
   var _textcontroller = TextEditingController();
+  String yup;
 
   @override
   Widget build(BuildContext context) {
@@ -124,6 +126,7 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
                         SizedBox(height: 20, width: 20),
                         //email
                         TextFormField(
+                           controller: _emailController,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           cursorColor: myLightBlue,
                           decoration: InputDecoration(
@@ -149,7 +152,7 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
                         SizedBox(height: 20, width: 20),
                         //password
                         TextFormField(
-                          controller: _passwordcontroller,
+                          controller: _passwordController,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           cursorColor: myLightBlue,
                           decoration: InputDecoration(
@@ -160,8 +163,8 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
                           ),
                           obscureText: true,
                           validator: (value) {
-                            if (value.isEmpty || value.length < 5) {
-                              return 'password must be more than 4 characters';
+                            if (value.isEmpty || value.length < 7) {
+                              return 'invalid password';
                             }
                             return null;
                           },
@@ -181,10 +184,10 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
                           ),
                           obscureText: true,
                           validator: (value) {
-                            if (value.isEmpty || value.length < 5) {
-                              return 'password must be more than 4 characters';
+                            if (value.isEmpty || value.length < 7) {
+                              return 'invalid password';
                             } else if (value !=
-                                _passwordcontroller.value.text) {
+                                _passwordController.value.text) {
                               return 'passwords do not match';
                             }
                             return null;
@@ -234,8 +237,7 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
                           text: "Sign Up",
                           press: () {
                             if (_formkey.currentState.validate()) {
-                              var yup = _textcontroller.text;
-
+                               createUser();
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -286,4 +288,19 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
       ),
     );
   }
+
+
+ void createUser() async {
+    dynamic result = await _auth.createNewUser(
+       _emailController.text, _passwordController.text);
+    if (result == null) {
+      print('Email is not valid');
+    } else {
+      print(result.toString());
+      _passwordController.clear();
+      _emailController.clear();
+      Navigator.pop(context);
+    }
+
+}
 }
