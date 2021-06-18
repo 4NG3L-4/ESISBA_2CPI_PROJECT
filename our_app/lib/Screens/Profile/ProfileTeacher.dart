@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:our_app/components/CourseCard.dart';
-import 'package:our_app/constants.dart';
 
 class ProfileTeacherScreen extends StatefulWidget {
   final String value;
