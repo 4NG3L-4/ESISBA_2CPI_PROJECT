@@ -33,11 +33,72 @@ class _StringsScreenState extends State<StringsScreen> {
             Center(
               widthFactor: double.infinity,
               heightFactor: double.infinity,
+              //box blanc
               child: Card(
                 color: myLightWhite,
-                margin: EdgeInsets.all(20),
+                margin: EdgeInsets.only(top: 50),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(53),
+                  borderRadius: BorderRadius.circular(25),
+                ),
+                child: Center(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      //partie cours
+                      Container(
+                        child: Card(
+                          color: myLightBlue,
+                          margin: EdgeInsets.all(10),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Center(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Padding(
+                                  padding: EdgeInsets.all(5),
+                                  child: RichText(
+                                    text: TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text: 'Strings manipulation:\n\ ',
+                                          style: TextStyle(
+                                            color: myLightWhite,
+                                            fontSize: 15,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text:
+                                              '  Strings are defined as an array of characters. \n\The difference between a character array and a string is the string is terminated with a special character ‘\0’.\n\Declaring a string is as simple as declaring a one dimensional array.\n\Below is the basic syntax for declaring a string in Pascal:',
+                                          style: TextStyle(
+                                            color: myDarkBlue,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text:
+                                              '\n\ > S: string; \n\ S: array [10] of char;  ',
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 11,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                    //fin partie cours
+                  ),
                 ),
               ),
             ),
