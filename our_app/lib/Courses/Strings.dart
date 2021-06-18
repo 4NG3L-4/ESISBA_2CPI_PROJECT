@@ -42,9 +42,9 @@ class _StringsScreenState extends State<StringsScreen> {
                 ),
                 child: Center(
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
+                    //crossAxisAlignment: CrossAxisAlignment.start,
+                    //mainAxisAlignment: MainAxisAlignment.start,
+                    //mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       //partie cours
                       Container(
@@ -105,10 +105,55 @@ class _StringsScreenState extends State<StringsScreen> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Center(
+                            child: Expanded(
+                              child: Column(
+                                //crossAxisAlignment: CrossAxisAlignment.start,
+                                //mainAxisAlignment: MainAxisAlignment.start,
+                                //mainAxisSize: MainAxisSize.min,
+                                children: <Widget>[
+                                  Padding(
+                                    padding: EdgeInsets.all(5),
+                                    child: RichText(
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text: 'Exemple:\n\ ',
+                                            style: TextStyle(
+                                              color: myLightWhite,
+                                              fontSize: 17,
+                                            ),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                '> var\n\ s : string; \n\ begin \n\   s:=\'\Hello, dear\'\; \n\   writeln(s); \n\    s[1]:=\'\J`\'\;    { Replace the first character with J } \n\    s[5]:=\'\y\'\;    { Replace the fifth character with y }\n\    writeln(s);   { Jelly, dear } \n\    writeln(\'\The length of s is \'\,ord(s[0])); \n\ end. ',
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 12,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      //exercice
+                      Container(
+                        child: Card(
+                          color: myLightBlue,
+                          margin: EdgeInsets.all(10),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Center(
                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              mainAxisSize: MainAxisSize.min,
+                              //crossAxisAlignment: CrossAxisAlignment.start,
+                              //mainAxisAlignment: MainAxisAlignment.start,
+                              //mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
                                 Padding(
                                   padding: EdgeInsets.all(5),
@@ -116,15 +161,30 @@ class _StringsScreenState extends State<StringsScreen> {
                                     text: TextSpan(
                                       children: [
                                         TextSpan(
-                                          text: 'Exemple:\n\ ',
+                                          text: 'Practice \n\ ',
                                           style: TextStyle(
                                             color: myLightWhite,
-                                            fontSize: 17,
+                                            fontSize: 18,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text: 'RendezV program \n\ ',
+                                          style: TextStyle(
+                                            color: myDarkBlue,
+                                            fontSize: 16,
                                           ),
                                         ),
                                         TextSpan(
                                           text:
-                                              '> var\n\ s : string; \n\ begin \n\   s:=\'\Hello, dear\'\; \n\   writeln(s); \n\    s[1]:=\'\J`\'\;    { Replace the first character with J } \n\    s[5]:=\'\y\'\;    { Replace the fifth character with y }\n\    writeln(s);   { Jelly, dear } \n\    writeln(\'\The length of s is \'\,ord(s[0])); \n\ end. ',
+                                              'We introduce the type temps_t, the procedures ecriture(t : temps_t) and lecture(t : temps_t), and the function calc_ns(t : temps_t): integer.\n\And the types: \n\ ',
+                                          style: TextStyle(
+                                            color: myDarkBlue,
+                                            fontSize: 14,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text:
+                                              '> CONSTMaxRdv= 20;\n\TYPERdv_t= Recordtitre: string[63];\n\debut,fin : temps_t;\n\End;\n\ TabRdv_t= array[1..MaxRdv]of Rdv_t;',
                                           style: TextStyle(
                                             color: Colors.black,
                                             fontSize: 12,
@@ -134,14 +194,47 @@ class _StringsScreenState extends State<StringsScreen> {
                                     ),
                                   ),
                                 ),
+                                //analyse
+                                Container(
+                                  child: Card(
+                                    color: myLightWhite,
+                                    margin: EdgeInsets.all(15),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(9),
+                                    ),
+                                    child: Center(
+                                      child: Column(
+                                        //crossAxisAlignment:CrossAxisAlignment.start,
+                                        //mainAxisAlignment:MainAxisAlignment.start,
+                                        //mainAxisSize: MainAxisSize.min,
+                                        children: <Widget>[
+                                          Padding(
+                                            padding: EdgeInsets.all(5),
+                                            child: RichText(
+                                              text: TextSpan(
+                                                children: [
+                                                  TextSpan(
+                                                    text: '1-Input: \n\ ',
+                                                    style: TextStyle(
+                                                      color: myLightWhite,
+                                                      fontSize: 17,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ],
                             ),
                           ),
                         ),
-                      ),
+                      )
                     ],
-
-                    //fin partie cours
                   ),
                 ),
               ),
