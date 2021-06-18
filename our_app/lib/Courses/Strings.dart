@@ -95,8 +95,52 @@ class _StringsScreenState extends State<StringsScreen> {
                             ),
                           ),
                         ),
-                      )
+                      ),
+                      //exemple
+                      Container(
+                        child: Card(
+                          color: myLightBlue,
+                          margin: EdgeInsets.all(10),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Center(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Padding(
+                                  padding: EdgeInsets.all(5),
+                                  child: RichText(
+                                    text: TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text: 'Exemple:\n\ ',
+                                          style: TextStyle(
+                                            color: myLightWhite,
+                                            fontSize: 17,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text:
+                                              '> var\n\ s : string; \n\ begin \n\   s:=\'\Hello, dear\'\; \n\   writeln(s); \n\    s[1]:=\'\J`\'\;    { Replace the first character with J } \n\    s[5]:=\'\y\'\;    { Replace the fifth character with y }\n\    writeln(s);   { Jelly, dear } \n\    writeln(\'\The length of s is \'\,ord(s[0])); \n\ end. ',
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
+
                     //fin partie cours
                   ),
                 ),
