@@ -40,7 +40,7 @@ class _ProfileTeacherScreenState extends State<ProfileTeacherScreen> {
                   Container(
                     margin: EdgeInsets.only(top: 5),
                     child: SvgPicture.asset(
-                      "assets/icons/man.svg",
+                      "assets/icons/teacher.svg",
                       width: 100,
                       height: 100,
                     ),

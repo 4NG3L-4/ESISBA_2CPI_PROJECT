@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:our_app/components/ChatCard.dart';
+import 'package:our_app/Models/ChatUsersModel.dart';
 
 class ChatScreen extends StatefulWidget {
   @override
@@ -7,6 +8,24 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
+  List<ChatUsers> chatUsers = [
+    ChatUsers(
+        name: "Med Yassim",
+        messageText: "I need help!",
+        image: "assets/icons/teacher.svg"),
+    ChatUsers(
+        name: "Youcef Daoudi",
+        messageText: "what do you think of this?",
+        image: "assets/icons/student.svg"),
+    ChatUsers(
+        name: "Khaled Akid",
+        messageText: "Look what I found in this course...",
+        image: "assets/icons/teacher.svg"),
+    ChatUsers(
+        name: "Yacine Bey",
+        messageText: "I have an awesome informations for you",
+        image: "assets/icons/student.svg"),
+  ];
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -25,15 +44,19 @@ class _ChatScreenState extends State<ChatScreen> {
                 ),
               ),
             ),
-            ListView(
-              children: <Widget>[
-                ChatCard(),
-                ChatCard(),
-                ChatCard(),
-                ChatCard(),
-                ChatCard(),
-              ],
-            )
+            TextField(),
+            ListView.builder(
+              itemCount: chatUsers.length,
+              shrinkWrap: true,
+              padding: EdgeInsets.only(top: 16),
+              itemBuilder: (context, index) {
+                return ChatCard(
+                  name: chatUsers[index].name,
+                  messageText: chatUsers[index].messageText,
+                  image: chatUsers[index].image,
+                );
+              },
+            ),
           ],
         ),
       ),

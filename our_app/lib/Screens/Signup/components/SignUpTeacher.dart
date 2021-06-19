@@ -126,7 +126,7 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
                         SizedBox(height: 20, width: 20),
                         //email
                         TextFormField(
-                           controller: _emailController,
+                          controller: _emailController,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           cursorColor: myLightBlue,
                           decoration: InputDecoration(
@@ -141,7 +141,7 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
                               return 'Enter your email please';
                             }
                             if (!RegExp(
-                                    r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                    r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9.a-zA-Z0-9.-]+\.[a-zA-Z]+")
                                 .hasMatch(value)) {
                               return 'Invalid Email';
                             }
@@ -164,7 +164,7 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
                           obscureText: true,
                           validator: (value) {
                             if (value.isEmpty || value.length < 7) {
-                              return 'invalid password';
+                              return 'password must not be less than 7 caracters';
                             }
                             return null;
                           },
@@ -185,7 +185,7 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
                           obscureText: true,
                           validator: (value) {
                             if (value.isEmpty || value.length < 7) {
-                              return 'invalid password';
+                              return 'password must not be less than 7 caracters';
                             } else if (value !=
                                 _passwordController.value.text) {
                               return 'passwords do not match';
@@ -237,7 +237,7 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
                           text: "Sign Up",
                           press: () {
                             if (_formkey.currentState.validate()) {
-                               createUser();
+                              createUser();
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -289,10 +289,9 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
     );
   }
 
-
- void createUser() async {
+  void createUser() async {
     dynamic result = await _auth.createNewUser(
-       _emailController.text, _passwordController.text);
+        _emailController.text, _passwordController.text);
     if (result == null) {
       print('Email is not valid');
     } else {
@@ -301,6 +300,5 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
       _emailController.clear();
       Navigator.pop(context);
     }
-
-}
+  }
 }

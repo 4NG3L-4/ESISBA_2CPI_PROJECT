@@ -3,6 +3,11 @@ import 'package:our_app/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ChatCard extends StatelessWidget {
+  final String name;
+  final String messageText;
+  final String image;
+  ChatCard(
+      {@required this.name, @required this.messageText, @required this.image});
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -25,42 +30,45 @@ class ChatCard extends StatelessWidget {
                       margin: EdgeInsets.only(left: 10, top: 10),
                       child: CircleAvatar(
                         child: SvgPicture.asset(
-                          "assets/icons/man.svg",
+                          image,
                         ),
                       ),
                     ),
                     SizedBox(width: 20),
                     Text(
-                      "Med Yassim",
+                      name,
                     ),
                   ],
                 ),
                 Container(
-                  child: Text(
-                      "Maecenas est ligula, suscipit in eros eu, volutpat consequat metus."),
+                  child: Text(messageText),
                 ),
                 Row(
                   children: <Widget>[
+                    SizedBox(width: 20),
                     SvgPicture.asset(
                       "assets/icons/heart.svg",
-                      height: 30,
-                      width: 30,
+                      height: 25,
+                      width: 25,
                       color: myDarkBlue,
                     ),
+                    SizedBox(width: 15),
                     Text(
                       "Likes",
                     ),
+                    SizedBox(width: 25),
                     SvgPicture.asset(
                       "assets/icons/speech-bubble.svg",
-                      height: 30,
-                      width: 30,
+                      height: 25,
+                      width: 25,
                       color: myDarkBlue,
                     ),
+                    SizedBox(width: 15),
                     Text(
                       "Comments",
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ),
