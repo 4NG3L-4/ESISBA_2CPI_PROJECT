@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:our_app/Screens/Principale/PrincipaleStudent.dart';
 import 'package:our_app/Screens/Signup/SignUpScreen.dart';
 import 'package:our_app/constants.dart';
 import 'package:flutter_svg/svg.dart';
@@ -94,7 +95,16 @@ class _LoginPageState extends State<LoginPage> {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30.0),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return PrincipaleStudentScreen();
+                  },
+                ),
+              );
+            },
             child: Text(
               "Login",
               style: TextStyle(
