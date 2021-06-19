@@ -30,9 +30,9 @@ class _StringsScreenState extends State<StringsScreen> {
                 ),
               ),
             ),
-            Center(
-              widthFactor: double.infinity,
-              heightFactor: double.infinity,
+            SingleChildScrollView(
+              //widthFactor: double.infinity,
+              //heightFactor: double.infinity,
               //box blanc
               child: Card(
                 color: myLightWhite,
@@ -42,9 +42,9 @@ class _StringsScreenState extends State<StringsScreen> {
                 ),
                 child: Center(
                   child: Column(
-                    //crossAxisAlignment: CrossAxisAlignment.start,
-                    //mainAxisAlignment: MainAxisAlignment.start,
-                    //mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       //partie cours
                       Container(
@@ -204,9 +204,11 @@ class _StringsScreenState extends State<StringsScreen> {
                                     ),
                                     child: Center(
                                       child: Column(
-                                        //crossAxisAlignment:CrossAxisAlignment.start,
-                                        //mainAxisAlignment:MainAxisAlignment.start,
-                                        //mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        mainAxisSize: MainAxisSize.min,
                                         children: <Widget>[
                                           Padding(
                                             padding: EdgeInsets.all(5),
@@ -214,10 +216,81 @@ class _StringsScreenState extends State<StringsScreen> {
                                               text: TextSpan(
                                                 children: [
                                                   TextSpan(
-                                                    text: '1-Input: \n\ ',
+                                                    text: '1Input: \n\ ',
                                                     style: TextStyle(
-                                                      color: myLightWhite,
-                                                      fontSize: 17,
+                                                      color: myDarkBlue,
+                                                      fontSize: 18,
+                                                    ),
+                                                  ),
+                                                  TextSpan(
+                                                    text:
+                                                        'Create a procedure CreateRdv(r) which read from the keyboard the input of r:Rdv_t; by calling the procedure lecture()\n\ ',
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 14,
+                                                    ),
+                                                  ),
+                                                  TextSpan(
+                                                    text: ' 2)Display: \n\ ',
+                                                    style: TextStyle(
+                                                      color: myDarkBlue,
+                                                      fontSize: 18,
+                                                    ),
+                                                  ),
+                                                  TextSpan(
+                                                    text:
+                                                        'Create a procedure AffichRdv(r) which display in the scree the fields of r:Rdv_t by calling ecriture() \n\ ',
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 14,
+                                                    ),
+                                                  ),
+                                                  TextSpan(
+                                                    text:
+                                                        '3)Overlapping:  \n\ ',
+                                                    style: TextStyle(
+                                                      color: myDarkBlue,
+                                                      fontSize: 18,
+                                                    ),
+                                                  ),
+                                                  TextSpan(
+                                                    text:
+                                                        'Create a boolean function  Chevauche(r1,r2) which send TRUE if the r1,r2:Rdv_t overlap. \n\ ',
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 14,
+                                                    ),
+                                                  ),
+                                                  TextSpan(
+                                                    text:
+                                                        '4)"TestJournee" \n\ ',
+                                                    style: TextStyle(
+                                                      color: myDarkBlue,
+                                                      fontSize: 18,
+                                                    ),
+                                                  ),
+                                                  TextSpan(
+                                                    text:
+                                                        'Create a procedure TestJournee(j,n) which detects and display the "rendez-vous" which overlap in one day, from the n "rendez-vous" stocked in j:TabRdv_t. \n\ ',
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 14,
+                                                    ),
+                                                  ),
+                                                  TextSpan(
+                                                    text:
+                                                        '5)Principal program: \n\ ',
+                                                    style: TextStyle(
+                                                      color: myDarkBlue,
+                                                      fontSize: 18,
+                                                    ),
+                                                  ),
+                                                  TextSpan(
+                                                    text:
+                                                        'The principal program "RendezV program" ask a number of "rendez-vous", read it from the keyboard, and display the list of "rendez-vous" which overlap. \n\ ',
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 14,
                                                     ),
                                                   ),
                                                 ],

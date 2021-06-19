@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:our_app/Courses/Arrays.dart';
-import 'package:our_app/Courses/Loops.dart';
+import 'package:our_app/Courses/loops/Loops.dart';
 import 'package:our_app/Courses/Strings.dart';
 import 'package:our_app/Courses/Trees.dart';
 import 'package:our_app/Courses/linked_list.dart';
