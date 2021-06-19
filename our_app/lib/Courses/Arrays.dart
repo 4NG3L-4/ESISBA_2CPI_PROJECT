@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:our_app/Courses/linkedlist/linked_list.dart';
+import 'package:our_app/Courses/linked_list.dart';
 import 'package:our_app/constants.dart';
 import 'package:our_app/components/RoundedButton.dart';
 
@@ -264,7 +264,7 @@ class ArraysScreen extends StatelessWidget {
                                                   ),
                                                   TextSpan(
                                                     text:
-                                                        '>program exerciceSolution;\n\  >  var\n\    arr:Array[1..5]of integer;\n\    i,sum,min,max:integer;\n\  > begin\n\    (*the initialisation of the array\n\'s elements*)\n\     arr[1]:=1;\n\    arr[2]:=10;\n\     arr[3]:=9;\n\    arr[4]:=7;\n\     arr[5]:=11;\n\  (*intialisation ofsum,max,min *)  \n\ sum:=0;\n\  max:=arr[1];\n\   min:=arr[1];\n\ > for i:=1 to 5 do\n\    begin\n\     (*searching for the maximum and the minimum in this array *)\n\       if max<arr[i] then max:=arr[i];\n\       if min>arr[i] then min:=arr[i];\n\         (*the calcule of the summe*) \n`\       sum:=sum+arr[i];\n\    end;\n\  writeln(\'\the maximum element is\'\,max,\n\        \'\the minimum element is,min, \n\        \'\the summe of all elements of the the array is\'\,sum) \n\end. \n\ ',
+                                                        '>program exerciceSolution;\n\  >  var\n\    arr:Array[1..5]of integer;\n\    i,sum,min,max:integer;\n\  > begin\n\    (*the initialisation of the array\n\'s elements*)\n\     arr[1]:=1;\n\    arr[2]:=10;\n\     arr[3]:=9;\n\    arr[4]:=7;\n\     arr[5]:=11;\n\  (*intialisation ofsum,max,min *)  \n\ sum:=0;\n\  max:=arr[1];\n\   min:=arr[1];\n\ > for i:=1 to 5 do\n\    begin\n\     (*searching for the maximum and the minimum in this array *)\n\       if max<arr[i] then max:=arr[i];\n\       if min>arr[i] then min:=arr[i];\n\         (*the calcule of the summe*) \n`\       sum:=sum+arr[i];\n\    end;\n\  writeln(\'\the maximum element is\'\,max,\n\        \'\the minimum element is,min, \n\        \'\the summe of all elements of the the array is\'\,sum) \n\end.\n\ ',
                                                     style: TextStyle(
                                                       color: Colors.black,
                                                       fontSize: 14,

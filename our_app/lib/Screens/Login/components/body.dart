@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:our_app/Screens/Principale/PrincipaleStudent.dart';
+
+import 'package:our_app/Screens/Principale/Principale.dart';
+import 'package:our_app/Screens/Principale/PrincipaleTeacher.dart';
+
 import 'package:our_app/Screens/Signup/SignUpScreen.dart';
 import 'package:our_app/constants.dart';
 import 'package:flutter_svg/svg.dart';
@@ -21,45 +25,61 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final _passwordcontroller = TextEditingController();
   String email, password;
   Widget _buildEmailRow() {
     return Padding(
-      padding: EdgeInsets.all(8),
+      padding: EdgeInsets.all(0.025),
       child: TextFormField(
+        autovalidateMode: AutovalidateMode.onUserInteraction,
         cursorColor: myLightBlue,
-        keyboardType: TextInputType.emailAddress,
-        onChanged: (value) {
-          setState(() {
-            email = value;
-          });
-        },
         decoration: InputDecoration(
-            labelText: 'E-mail',
-            labelStyle: TextStyle(
-              color: myLightBlue,
-            )),
+          labelText: 'Email',
+          labelStyle: TextStyle(
+            color: myLightBlue,
+          ),
+        ),
+        keyboardType: TextInputType.emailAddress,
+        validator: (value) {
+          if (value.isEmpty) {
+            return 'Enter your email please';
+          }
+          if (!RegExp(
+                  r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+              .hasMatch(value)) {
+            return 'Invalid Email';
+          }
+          return null;
+        },
+        onSaved: (value) {},
       ),
+      // SizedBox(height: 20, width: 20),
     );
   }
 
   Widget _buildPasswordRow() {
     return Padding(
-      padding: EdgeInsets.all(8),
+      padding: EdgeInsets.all(0.0001),
       child: TextFormField(
+        controller: _passwordcontroller,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
         cursorColor: myLightBlue,
-        keyboardType: TextInputType.text,
-        obscureText: true,
-        onChanged: (value) {
-          setState(() {
-            password = value;
-          });
-        },
         decoration: InputDecoration(
-            labelText: 'Password',
-            labelStyle: TextStyle(
-              color: myLightBlue,
-            )),
+          labelText: 'password',
+          labelStyle: TextStyle(
+            color: myLightBlue,
+          ),
+        ),
+        obscureText: true,
+        validator: (value) {
+          if (value.isEmpty || value.length < 5) {
+            return 'password must be more than 4 characters';
+          }
+          return null;
+        },
+        onSaved: (value) {},
       ),
+      //SizedBox(height: 20, width: 20),
     );
   }
 

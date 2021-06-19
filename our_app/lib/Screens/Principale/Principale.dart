@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:our_app/Courses/Strings.dart';
 import 'package:our_app/constants.dart';
 import 'package:our_app/Screens/Principale/PrincipaleTeacher.dart';
+import 'package:our_app/Screens/Principale/PrincipaleStudent.dart';
 import 'package:our_app/Screens/Profile/ProfileTeacher.dart';
 import 'package:our_app/Screens/Search/search.dart';
 import 'package:our_app/Screens/chating/chat.dart';
@@ -14,7 +16,7 @@ class PrincipaleScreen extends StatefulWidget {
 class _PrincipaleScreenState extends State<PrincipaleScreen> {
   int _selectedItemIndex = 0;
   final List<Widget> _children = [
-    PrincipaleTeacherScreen(),
+    PrincipaleStudentScreen(),
     ChatScreen(),
     NotificationScreen(),
     SearchScreen(),
@@ -27,7 +29,7 @@ class _PrincipaleScreenState extends State<PrincipaleScreen> {
       body: _children[_selectedItemIndex],
       bottomNavigationBar: Row(
         children: <Widget>[
-          buildBarNavItem(Icons.home, 0, PrincipaleTeacherScreen()),
+          buildBarNavItem(Icons.home, 0, PrincipaleStudentScreen()),
           buildBarNavItem(Icons.chat_bubble, 1, ChatScreen()),
           buildBarNavItem(Icons.notifications, 2, NotificationScreen()),
           buildBarNavItem(Icons.search, 3, SearchScreen()),

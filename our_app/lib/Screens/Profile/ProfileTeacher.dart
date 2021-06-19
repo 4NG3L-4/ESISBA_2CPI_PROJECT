@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:our_app/components/CourseCard.dart';
-import 'package:our_app/constants.dart';
 
 class ProfileTeacherScreen extends StatefulWidget {
   final String value;
@@ -41,7 +40,7 @@ class _ProfileTeacherScreenState extends State<ProfileTeacherScreen> {
                   Container(
                     margin: EdgeInsets.only(top: 5),
                     child: SvgPicture.asset(
-                      "assets/icons/man.svg",
+                      "assets/icons/teacher.svg",
                       width: 100,
                       height: 100,
                     ),
