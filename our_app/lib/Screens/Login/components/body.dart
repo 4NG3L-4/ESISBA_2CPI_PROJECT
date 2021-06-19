@@ -26,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
   String email, password;
   Widget _buildEmailRow() {
     return Padding(
-      padding: EdgeInsets.all(8),
+      padding: EdgeInsets.all(0.025),
       child: TextFormField(
         autovalidateMode: AutovalidateMode.onUserInteraction,
         cursorColor: myLightBlue,
@@ -56,7 +56,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _buildPasswordRow() {
     return Padding(
-      padding: EdgeInsets.all(8),
+      padding: EdgeInsets.all(0.0001),
       child: TextFormField(
         controller: _passwordcontroller,
         autovalidateMode: AutovalidateMode.onUserInteraction,

@@ -5,15 +5,15 @@ import 'package:our_app/Courses/Strings.dart';
 import 'package:our_app/Courses/Trees.dart';
 import 'package:our_app/Courses/linked_list.dart';
 import 'package:our_app/constants.dart';
-import 'package:our_app/components/RoundedButton.dart';
+import 'package:our_app/components/principalecoursestudent.dart';
 
-class PrincipaleTeacherScreen extends StatefulWidget {
+class PrincipaleStudentScreen extends StatefulWidget {
   @override
-  _PrincipaleTeacherScreenState createState() =>
-      _PrincipaleTeacherScreenState();
+  _PrincipaleStudentScreenState createState() =>
+      _PrincipaleStudentScreenState();
 }
 
-class _PrincipaleTeacherScreenState extends State<PrincipaleTeacherScreen> {
+class _PrincipaleStudentScreenState extends State<PrincipaleStudentScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -47,27 +47,25 @@ class _PrincipaleTeacherScreenState extends State<PrincipaleTeacherScreen> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      RoundedButton(
-                        color: myDarkBlue,
-                        text: "Strings",
-                        textColor: myLightWhite,
-                        sizee: size.width * 0.06,
-                        press: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return StringsScreen();
-                              },
-                            ),
-                          );
-                        },
+                      Container(
+                        child: Principalecoursestudent(
+                          nCourse: "Course1",
+                          name: "Strings",
+                          press: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return StringsScreen();
+                                },
+                              ),
+                            );
+                          },
+                        ),
                       ),
-                      RoundedButton(
-                        color: myDarkBlue,
-                        text: "Loops",
-                        textColor: myLightWhite,
-                        sizee: size.width * 0.06,
+                      Principalecoursestudent(
+                        nCourse: "Course2",
+                        name: "Loops",
                         press: () {
                           Navigator.push(
                             context,
@@ -79,11 +77,9 @@ class _PrincipaleTeacherScreenState extends State<PrincipaleTeacherScreen> {
                           );
                         },
                       ),
-                      RoundedButton(
-                        color: myDarkBlue,
-                        text: "Arrays",
-                        textColor: myLightWhite,
-                        sizee: size.width * 0.06,
+                      Principalecoursestudent(
+                        nCourse: "Course3",
+                        name: "Arrays",
                         press: () {
                           Navigator.push(
                             context,
@@ -95,27 +91,23 @@ class _PrincipaleTeacherScreenState extends State<PrincipaleTeacherScreen> {
                           );
                         },
                       ),
-                      RoundedButton(
-                        color: myDarkBlue,
-                        text: "Linked-List",
-                        textColor: myLightWhite,
-                        sizee: size.width * 0.06,
+                      Principalecoursestudent(
+                        nCourse: "Course4",
+                        name: "Linked_List",
                         press: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                //return LinkedlistScreen();
+                                return LinkedlistScreen();
                               },
                             ),
                           );
                         },
                       ),
-                      RoundedButton(
-                        color: myDarkBlue,
-                        text: "Trees",
-                        textColor: myLightWhite,
-                        sizee: size.width * 0.06,
+                      Principalecoursestudent(
+                        nCourse: "Course5",
+                        name: "Trees",
                         press: () {
                           Navigator.push(
                             context,
