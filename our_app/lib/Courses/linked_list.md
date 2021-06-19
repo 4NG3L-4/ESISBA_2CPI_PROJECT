@@ -1,10 +1,7 @@
  #### introduction to the pointers:
- every variable is a memory location and every memory location
- has its address defined which can be accessed using the name of 
- the pointer variable, which denotes an address in memory.
+ every variable is a memory location and every memory location has its address defined which can be accessed using the name of the pointer variable, which denotes an address in memory.
 
-  A pointer is a dynamic variable, whose value is the address of
-  another variable.
+  A pointer is a dynamic variable, whose value is the address of another variable.
   #### exemple:
 
 In the implementation below we will intialise a pointer and use it.
@@ -36,13 +33,11 @@ When a pointer is disposed of, it won't be possible to use it again*)
 >
 >End.
 
-- assign a NIL value to a pointer variable in case you do not have exact
- address to be assigned. A pointer that is assigned NIL points to nowhere.
+- assign a NIL value to a pointer variable in case you do not have exact address to be assigned. A pointer that is assigned NIL points to nowhere.
 
  #### Introduction to Linked Lists:
  
-Linked lists make vast use of pointers since each node points to another in memory.the
-head  is the pointer to the first node and the tail  points to the last node.
+Linked lists make vast use of pointers since each node points to another in memory.the head  is the pointer to the first node and the tail  points to the last node.
 
 #### exemple:
 we will going to use a student record as our record structure to be stored in a linked list

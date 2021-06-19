@@ -197,7 +197,7 @@ class ArraysScreen extends StatelessWidget {
                         ),
                       ),
                       //exercice
-                      /*Container(
+                      Container(
                         child: Card(
                           color: myLightBlue,
                           margin: EdgeInsets.all(10),
@@ -223,26 +223,11 @@ class ArraysScreen extends StatelessWidget {
                                           ),
                                         ),
                                         TextSpan(
-                                          text: 'RendezV program \n\ ',
+                                          text:
+                                              'Write a program in pascal wich intialise an array with the above value: 1,10,9,7,11 and defin the maximum,minimum element and the summe of all elements of the the array  \n\ ',
                                           style: TextStyle(
                                             color: myDarkBlue,
                                             fontSize: 16,
-                                          ),
-                                        ),
-                                        TextSpan(
-                                          text:
-                                              'We introduce the type temps_t, the procedures ecriture(t : temps_t) and lecture(t : temps_t), and the function calc_ns(t : temps_t): integer.\n\And the types: \n\ ',
-                                          style: TextStyle(
-                                            color: myDarkBlue,
-                                            fontSize: 14,
-                                          ),
-                                        ),
-                                        TextSpan(
-                                          text:
-                                              '> CONSTMaxRdv= 20;\n\TYPERdv_t= Recordtitre: string[63];\n\debut,fin : temps_t;\n\End;\n\ TabRdv_t= array[1..MaxRdv]of Rdv_t;',
-                                          style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 12,
                                           ),
                                         ),
                                       ],
@@ -271,7 +256,7 @@ class ArraysScreen extends StatelessWidget {
                                               text: TextSpan(
                                                 children: [
                                                   TextSpan(
-                                                    text: '1Input: \n\ ',
+                                                    text: 'solution: \n\ ',
                                                     style: TextStyle(
                                                       color: myDarkBlue,
                                                       fontSize: 18,
@@ -279,70 +264,7 @@ class ArraysScreen extends StatelessWidget {
                                                   ),
                                                   TextSpan(
                                                     text:
-                                                        'Create a procedure CreateRdv(r) which read from the keyboard the input of r:Rdv_t; by calling the procedure lecture()\n\ ',
-                                                    style: TextStyle(
-                                                      color: Colors.black,
-                                                      fontSize: 14,
-                                                    ),
-                                                  ),
-                                                  TextSpan(
-                                                    text: ' 2)Display: \n\ ',
-                                                    style: TextStyle(
-                                                      color: myDarkBlue,
-                                                      fontSize: 18,
-                                                    ),
-                                                  ),
-                                                  TextSpan(
-                                                    text:
-                                                        'Create a procedure AffichRdv(r) which display in the scree the fields of r:Rdv_t by calling ecriture() \n\ ',
-                                                    style: TextStyle(
-                                                      color: Colors.black,
-                                                      fontSize: 14,
-                                                    ),
-                                                  ),
-                                                  TextSpan(
-                                                    text:
-                                                        '3)Overlapping:  \n\ ',
-                                                    style: TextStyle(
-                                                      color: myDarkBlue,
-                                                      fontSize: 18,
-                                                    ),
-                                                  ),
-                                                  TextSpan(
-                                                    text:
-                                                        'Create a boolean function  Chevauche(r1,r2) which send TRUE if the r1,r2:Rdv_t overlap. \n\ ',
-                                                    style: TextStyle(
-                                                      color: Colors.black,
-                                                      fontSize: 14,
-                                                    ),
-                                                  ),
-                                                  TextSpan(
-                                                    text:
-                                                        '4)"TestJournee" \n\ ',
-                                                    style: TextStyle(
-                                                      color: myDarkBlue,
-                                                      fontSize: 18,
-                                                    ),
-                                                  ),
-                                                  TextSpan(
-                                                    text:
-                                                        'Create a procedure TestJournee(j,n) which detects and display the "rendez-vous" which overlap in one day, from the n "rendez-vous" stocked in j:TabRdv_t. \n\ ',
-                                                    style: TextStyle(
-                                                      color: Colors.black,
-                                                      fontSize: 14,
-                                                    ),
-                                                  ),
-                                                  TextSpan(
-                                                    text:
-                                                        '5)Principal program: \n\ ',
-                                                    style: TextStyle(
-                                                      color: myDarkBlue,
-                                                      fontSize: 18,
-                                                    ),
-                                                  ),
-                                                  TextSpan(
-                                                    text:
-                                                        'The principal program "RendezV program" ask a number of "rendez-vous", read it from the keyboard, and display the list of "rendez-vous" which overlap. \n\ ',
+                                                        '>program exerciceSolution;\n\  >  var\n\    arr:Array[1..5]of integer;\n\    i,sum,min,max:integer;\n\  > begin\n\    (*the initialisation of the array\n\'s elements*)\n\     arr[1]:=1;\n\    arr[2]:=10;\n\     arr[3]:=9;\n\    arr[4]:=7;\n\     arr[5]:=11;\n\  (*intialisation ofsum,max,min *)  \n\ sum:=0;\n\  max:=arr[1];\n\   min:=arr[1];\n\ > for i:=1 to 5 do\n\    begin\n\     (*searching for the maximum and the minimum in this array *)\n\       if max<arr[i] then max:=arr[i];\n\       if min>arr[i] then min:=arr[i];\n\         (*the calcule of the summe*) \n`\       sum:=sum+arr[i];\n\    end;\n\  writeln(\'\the maximum element is\'\,max,\n\        \'\the minimum element is,min, \n\        \'\the summe of all elements of the the array is\'\,sum) \n\end.\n\ ',
                                                     style: TextStyle(
                                                       color: Colors.black,
                                                       fontSize: 14,
@@ -361,7 +283,7 @@ class ArraysScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                      ),*/
+                      ),
                       Container(
                         margin: EdgeInsets.only(left: 220),
                         width: 120,

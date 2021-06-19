@@ -41,10 +41,7 @@ end.
 
 
 #### exercice:
-Write a program in pascal wich intialise an array with the above
- value: 1,10,9,7,11 
- and defin the maximum, minimum element 
-  and the summe of all elements of the the array  
+Write a program in pascal wich intialise an array with the above value: 1,10,9,7,11 and defin the maximum,minimum element and the summe of all elements of the the array  
 #### solution:
 >program exerciceSolution;
 >

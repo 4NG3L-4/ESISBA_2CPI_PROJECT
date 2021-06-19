@@ -3,7 +3,7 @@ import 'package:our_app/Courses/Arrays.dart';
 import 'package:our_app/Courses/loops/Loops.dart';
 import 'package:our_app/Courses/Strings.dart';
 import 'package:our_app/Courses/Trees.dart';
-import 'package:our_app/Courses/linked_list.dart';
+import 'package:our_app/Courses/linkedlist/linked_list.dart';
 import 'package:our_app/constants.dart';
 import 'package:our_app/components/principalecoursestudent.dart';
 
