@@ -233,6 +233,7 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
                         ),
                         SizedBox(height: 40, width: 20),
                         //button
+
                         RoundedButton(
                           text: "Sign Up",
                           press: () {
@@ -242,6 +243,7 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
+                                    yup = _textcontroller.value.text;
                                     ProfileTeacherScreen(value: yup);
                                     print("yeess! $yup");
                                     return PrincipaleScreen();

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:our_app/components/ChatCard.dart';
 import 'package:our_app/Models/ChatUsersModel.dart';
+import 'package:our_app/constants.dart';
 
 class ChatScreen extends StatefulWidget {
   @override
@@ -44,18 +45,29 @@ class _ChatScreenState extends State<ChatScreen> {
                 ),
               ),
             ),
-            TextField(),
-            ListView.builder(
-              itemCount: chatUsers.length,
-              shrinkWrap: true,
-              padding: EdgeInsets.only(top: 16),
-              itemBuilder: (context, index) {
-                return ChatCard(
-                  name: chatUsers[index].name,
-                  messageText: chatUsers[index].messageText,
-                  image: chatUsers[index].image,
-                );
-              },
+            TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(30)),
+                fillColor: myLightWhite,
+                filled: true,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 60),
+              child: ListView.builder(
+                itemCount: chatUsers.length,
+                shrinkWrap: true,
+                padding: EdgeInsets.only(top: 16),
+                itemBuilder: (context, index) {
+                  return ChatCard(
+                    name: chatUsers[index].name,
+                    messageText: chatUsers[index].messageText,
+                    image: chatUsers[index].image,
+                  );
+                },
+              ),
             ),
           ],
         ),

@@ -13,6 +13,7 @@ class ProfileTeacherScreen extends StatefulWidget {
 
 class _ProfileTeacherScreenState extends State<ProfileTeacherScreen> {
   String value;
+
   _ProfileTeacherScreenState({this.value});
 
   @override
@@ -58,7 +59,7 @@ class _ProfileTeacherScreenState extends State<ProfileTeacherScreen> {
                             ),
                           ),
                           TextSpan(
-                            text: "${widget.value}!",
+                            text: value,
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
