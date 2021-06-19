@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:our_app/Courses/loops/Loops.dart';
 import 'package:our_app/constants.dart';
 import 'package:our_app/Screens/Principale/Principale.dart';
 import 'package:our_app/Screens/Profile/ProfileTeacher.dart';
 import 'package:our_app/Screens/Search/search.dart';
 import 'package:our_app/Screens/chating/chat.dart';
 import 'package:our_app/Screens/Notification/notification.dart';
+import 'package:our_app/components/RoundedButton.dart';
 
 class StringsScreen extends StatefulWidget {
   @override
@@ -306,7 +308,27 @@ class _StringsScreenState extends State<StringsScreen> {
                             ),
                           ),
                         ),
-                      )
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 220),
+                        width: 120,
+                        child: RoundedButton(
+                          color: myDarkBlue,
+                          text: 'Next',
+                          textColor: myLightWhite,
+                          sizee: 14,
+                          press: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return LoopsScreen();
+                                },
+                              ),
+                            );
+                          },
+                        ),
+                      ),
                     ],
                   ),
                 ),
