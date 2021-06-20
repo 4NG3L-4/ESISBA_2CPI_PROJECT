@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:our_app/Courses/Strings.dart';
+import 'package:our_app/Courses/Trees.dart';
 import 'package:our_app/constants.dart';
 import 'package:our_app/Screens/Principale/PrincipaleTeacher.dart';
 import 'package:our_app/Screens/Principale/PrincipaleStudent.dart';
@@ -21,6 +22,8 @@ class _PrincipaleScreenState extends State<PrincipaleScreen> {
     NotificationScreen(),
     SearchScreen(),
     ProfileTeacherScreen(),
+    StringsScreen(),
+    TreesScreen(),
   ];
 
   @override

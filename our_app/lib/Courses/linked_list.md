@@ -73,19 +73,16 @@ Begin
 End;
 
 #### exercice :
- write a procedure in pascal wich will accept a student record that's we use
- before and add the new node to the end of the list
+ write a procedure in pascal wich will accept a student record that's we use before and add the new node to the end of the list
 
 #### solution:
 
 >Procedure AddNode(StudRec : TStudRec);
 >
 >(*
--We first test if the Head is nil. If it as such, then it means that our list is still
- empty and what we should do is create a new Head and Tail and set Head to point to 
- the first node.
- Otherwise, if the linked list is not full, the tail dereferences to the last node's
- pointer and set it to point to the new node
+-We first test if the Head is nil. If it as such, then it means that our list is still empty and what we should do is create a new Head and Tail and set Head to point to the first node.
+ Otherwise, if the linked list is not full, the tail dereferences to the last node's pointer and set it to point
+ to the new node
 -we should update the Tail and set it to point to the most recent added node *)
 >
 >Var
