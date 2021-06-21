@@ -43,31 +43,35 @@ class ChatCard extends StatelessWidget {
                 Container(
                   child: Text(messageText),
                 ),
-                Row(
-                  children: <Widget>[
-                    SizedBox(width: 20),
-                    SvgPicture.asset(
-                      "assets/icons/heart.svg",
-                      height: 25,
-                      width: 25,
-                      color: myDarkBlue,
-                    ),
-                    SizedBox(width: 15),
-                    Text(
-                      "Likes",
-                    ),
-                    SizedBox(width: 25),
-                    SvgPicture.asset(
-                      "assets/icons/speech-bubble.svg",
-                      height: 25,
-                      width: 25,
-                      color: myDarkBlue,
-                    ),
-                    SizedBox(width: 15),
-                    Text(
-                      "Comments",
-                    ),
-                  ],
+                SizedBox(height: 20),
+                Padding(
+                  padding: const EdgeInsets.only(left: 15),
+                  child: Row(
+                    children: <Widget>[
+                      SizedBox(width: 20),
+                      SvgPicture.asset(
+                        "assets/icons/heart.svg",
+                        height: 25,
+                        width: 25,
+                        color: myDarkBlue,
+                      ),
+                      SizedBox(width: 15),
+                      Text(
+                        "Likes",
+                      ),
+                      SizedBox(width: 25),
+                      SvgPicture.asset(
+                        "assets/icons/speech-bubble.svg",
+                        height: 25,
+                        width: 25,
+                        color: myDarkBlue,
+                      ),
+                      SizedBox(width: 15),
+                      Text(
+                        "Comments",
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),

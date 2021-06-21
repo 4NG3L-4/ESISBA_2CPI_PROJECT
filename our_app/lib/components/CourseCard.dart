@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:our_app/Screens/chating/chat.dart';
+import 'package:our_app/Courses/Strings.dart';
 import 'package:our_app/constants.dart';
 
 class CourseCard extends StatelessWidget {
@@ -48,7 +48,7 @@ class CourseCard extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return ChatScreen();
+              return StringsScreen();
             },
           ),
         );

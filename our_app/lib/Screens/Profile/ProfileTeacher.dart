@@ -51,7 +51,7 @@ class _ProfileTeacherScreenState extends State<ProfileTeacherScreen> {
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: 'HELLO, ',
+                            text: 'HELLO ',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 40,
@@ -109,7 +109,7 @@ class _ProfileTeacherScreenState extends State<ProfileTeacherScreen> {
                       children: <Widget>[
                         CourseCard(
                           nCourse: "course 1",
-                          name: "While Loop",
+                          name: "Strings",
                         ),
                         CourseCard(
                           nCourse: "course 2",
@@ -124,12 +124,12 @@ class _ProfileTeacherScreenState extends State<ProfileTeacherScreen> {
                           name: "If Else Statement",
                         ),
                         CourseCard(
-                          nCourse: "course 2",
-                          name: "Variables",
+                          nCourse: "course 5",
+                          name: "While Loop",
                         ),
                         CourseCard(
-                          nCourse: "course 2",
-                          name: "Variables",
+                          nCourse: "course 6",
+                          name: "Trees",
                         ),
                       ],
                     ),

@@ -63,8 +63,8 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
                         Text(
                           'TEACHER',
                           style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black.withOpacity(0.6)),
                         ),
                         SizedBox(height: 20, width: 20),
                         //First name

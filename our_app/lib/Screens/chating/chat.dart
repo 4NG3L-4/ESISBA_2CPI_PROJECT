@@ -47,6 +47,8 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
             TextField(
               decoration: InputDecoration(
+                labelText: "add comment",
+                labelStyle: TextStyle(color: myDarkBlue),
                 border: OutlineInputBorder(
                     borderSide: BorderSide.none,
                     borderRadius: BorderRadius.circular(30)),

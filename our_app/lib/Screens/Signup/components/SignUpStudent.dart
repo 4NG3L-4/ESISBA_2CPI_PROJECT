@@ -1,8 +1,6 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:our_app/Screens/Principale/Principale.dart';
 import 'package:our_app/components/RoundedButton.dart';
-import 'package:our_app/Screens/Welcome/welcome_screen.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:our_app/constants.dart';
 import 'package:our_app/Screens/Login/login_screen.dart';
@@ -57,6 +55,7 @@ class SignUpStudentScreen extends StatelessWidget {
                           'STUDENT',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
+                            color: Colors.black.withOpacity(0.6),
                           ),
                         ),
                         SizedBox(height: 20, width: 20),
@@ -142,8 +141,6 @@ class SignUpStudentScreen extends StatelessWidget {
                               return 'invalid password';
                             }
                             return null;
-                          
-                         
                           },
                         ),
                         SizedBox(height: 20, width: 20),
@@ -224,7 +221,7 @@ class SignUpStudentScreen extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return WelcomeScreen();
+                                    return PrincipaleScreen();
                                   },
                                 ),
                               );
@@ -267,24 +264,20 @@ class SignUpStudentScreen extends StatelessWidget {
         ],
       ),
     );
-    
-}
+  }
 
 // *************************************************************
   void createUser() async {
     dynamic result = await _auth.createNewUser(
-       _emailController.text, _passwordController.text);
+        _emailController.text, _passwordController.text);
     if (result == null) {
       print('Email is not valid');
     } else {
       print(result.toString());
       _passwordController.clear();
       _emailController.clear();
-     // Navigator.pop(context);
-                               
-                            
-    }
+      // Navigator.pop(context);
 
-}
- 
+    }
+  }
 }
