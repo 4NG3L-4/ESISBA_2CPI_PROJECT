@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:our_app/Courses/linked_list.dart';
+import 'package:our_app/Courses/linkedlist/linked_list.dart';
 import 'package:our_app/constants.dart';
 import 'package:our_app/components/RoundedButton.dart';
 
