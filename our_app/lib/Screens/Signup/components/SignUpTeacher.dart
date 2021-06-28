@@ -14,9 +14,12 @@ class SignUpTeacherScreen extends StatefulWidget {
 
 class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
   final GlobalKey<FormState> _formkey = GlobalKey();
+  final _firstNameController = TextEditingController();
+  final _lastNameController = TextEditingController();
   final _passwordController = TextEditingController();
   final _emailController = TextEditingController();
   final _confirmpasswordcontroller = TextEditingController();
+  final _specialitycontroller = TextEditingController();
   final AuthenticationService _auth = AuthenticationService();
 
   var _textcontroller = TextEditingController();
@@ -69,7 +72,7 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
                         SizedBox(height: 20, width: 20),
                         //First name
                         TextFormField(
-                          controller: _textcontroller,
+                          controller: _firstNameController,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           cursorColor: myLightBlue,
                           decoration: InputDecoration(
@@ -88,6 +91,7 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
                         SizedBox(height: 20, width: 20),
                         //Last name
                         TextFormField(
+                          controller: _lastNameController,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           cursorColor: myLightBlue,
                           decoration: InputDecoration(
@@ -107,6 +111,7 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
                         SizedBox(height: 20, width: 20),
                         //Speciality
                         TextFormField(
+                          controller: _specialitycontroller,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           cursorColor: myLightBlue,
                           decoration: InputDecoration(
@@ -293,13 +298,22 @@ class _SignUpTeacherScreenState extends State<SignUpTeacherScreen> {
 
   void createUser() async {
     dynamic result = await _auth.createNewUser(
-        _emailController.text, _passwordController.text);
+      _emailController.text,
+      _passwordController.text,
+      _firstNameController.text,
+      _lastNameController.text,
+      "Teacher",
+      _specialitycontroller.text,
+    );
     if (result == null) {
       print('Email is not valid');
     } else {
       print(result.toString());
+      _firstNameController.clear();
+      _lastNameController.clear();
       _passwordController.clear();
       _emailController.clear();
+      _specialitycontroller.clear();
       Navigator.pop(context);
     }
   }
