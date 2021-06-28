@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:our_app/Screens/chating/Comments.dart';
 import 'package:our_app/components/CourseCard.dart';
 import 'package:our_app/constants.dart';
 
@@ -42,6 +43,19 @@ class _ProfileTeacherScreenState extends State<ProfileTeacherScreen> {
                   colors: [const Color(0xFF424874), const Color(0xFFA6B1E1)],
                 ),
               ),
+            ),
+            IconButton(
+              icon: Icon(Icons.menu, color: myDarkBlue),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return CommentsScreen();
+                    },
+                  ),
+                );
+              },
             ),
             Align(
               alignment: Alignment.topCenter,
