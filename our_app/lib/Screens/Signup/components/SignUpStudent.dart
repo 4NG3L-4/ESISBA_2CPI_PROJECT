@@ -221,7 +221,7 @@ class SignUpStudentScreen extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return PrincipaleScreen();
+                                    return PrincipaleStScreen();
                                   },
                                 ),
                               );
