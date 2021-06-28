@@ -30,7 +30,7 @@ class Body extends StatelessWidget {
               children: <Widget>[
                 Padding(
                   padding: EdgeInsets.only(top: 90),
-                  child: FlatButton(
+                  child: TextButton(
                     onPressed: () {},
                     child: RichText(
                       text: TextSpan(
@@ -56,7 +56,7 @@ class Body extends StatelessWidget {
               children: <Widget>[
                 Padding(
                   padding: EdgeInsets.only(top: 120),
-                  child: FlatButton(
+                  child: TextButton(
                     onPressed: () {},
                     child: RichText(
                       text: TextSpan(

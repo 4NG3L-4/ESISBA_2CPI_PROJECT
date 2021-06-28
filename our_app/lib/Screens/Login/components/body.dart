@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:our_app/Screens/Principale/Principale.dart';
-import 'package:our_app/Screens/Principale/PrincipaleStudent.dart';
 
 import 'package:our_app/Screens/Signup/SignUpScreen.dart';
 import 'package:our_app/components/RoundedButton.dart';
@@ -29,7 +28,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   
-   final _passwordController = TextEditingController();
+  final _passwordController = TextEditingController();
   final _emailController = TextEditingController();
        final AuthenticationService _auth = AuthenticationService();
 
@@ -69,24 +68,26 @@ class _LoginPageState extends State<LoginPage> {
   Widget _buildPasswordRow() {
     return Padding(
       padding: EdgeInsets.all(0.0001),
-      child: TextFormField(
-        controller: _passwordController,
-        autovalidateMode: AutovalidateMode.onUserInteraction,
-        cursorColor: myLightBlue,
-        decoration: InputDecoration(
-          labelText: 'password',
-          labelStyle: TextStyle(
-            color: myLightBlue,
+      child: SingleChildScrollView(
+        child: TextFormField(
+          controller: _passwordController,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
+          cursorColor: myLightBlue,
+          decoration: InputDecoration(
+            labelText: 'password',
+            labelStyle: TextStyle(
+              color: myLightBlue,
+            ),
           ),
+          obscureText: true,
+          validator: (value) {
+            if (value.isEmpty || value.length < 5) {
+              return 'password must be more than 4 characters';
+            }
+            return null;
+          },
+          onSaved: (value) {},
         ),
-        obscureText: true,
-        validator: (value) {
-          if (value.isEmpty || value.length < 7) {
-            return 'password must be more than 7 characters';
-          }
-          return null;
-        },
-        onSaved: (value) {},
       ),
       //SizedBox(height: 20, width: 20),
     );
@@ -118,26 +119,8 @@ class _LoginPageState extends State<LoginPage> {
           //height: 1.4 * (MediaQuery.of(context).size.height / 20),
           //width: 5 * (MediaQuery.of(context).size.width / 10),
           margin: EdgeInsets.all(20),
-          child: RoundedButton(
-                        color: myDarkBlue,
-                        text: "LOGIN",
-                        textColor: myLightWhite,
-                        press: () {
-                          if(_key.currentState.validate()){
-                            signInUser();
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return PrincipaleScreen();
-                              },
-                            ),
-                          );
-                          }
-                        },
-                      ),
-          /*
-          RaisedButton(
+          // ignore: deprecated_member_use
+          child: RaisedButton(
             elevation: 5.0,
             color: myDarkBlue,
             shape: RoundedRectangleBorder(
@@ -153,8 +136,7 @@ class _LoginPageState extends State<LoginPage> {
                 MaterialPageRoute(
                   builder: (context) {
                     return PrincipaleScreen();
-                  }
-              
+                  },
                 ),
               );
               }
@@ -167,7 +149,7 @@ class _LoginPageState extends State<LoginPage> {
                 fontSize: MediaQuery.of(context).size.height / 40,
               ),
             ),
-          ),*/
+          ),
         )
       ],
     );
@@ -249,6 +231,7 @@ class _LoginPageState extends State<LoginPage> {
           children: [
             Padding(
               padding: EdgeInsets.only(top: 20),
+              // ignore: deprecated_member_use
               child: FlatButton(
                 onPressed: () {
                   Navigator.push(

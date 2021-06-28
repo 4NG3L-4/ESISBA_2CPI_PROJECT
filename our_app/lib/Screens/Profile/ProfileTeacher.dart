@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:our_app/components/CourseCard.dart';
+import 'package:our_app/constants.dart';
 
 class ProfileTeacherScreen extends StatefulWidget {
   final String value;
@@ -21,6 +22,14 @@ class _ProfileTeacherScreenState extends State<ProfileTeacherScreen> {
     Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+        floatingActionButton: FloatingActionButton.extended(
+          onPressed: () {
+            // Add your onPressed code here!
+          },
+          label: const Text('Add Course'),
+          icon: const Icon(Icons.add),
+          backgroundColor: myDarkBlue,
+        ),
         body: Stack(
           children: <Widget>[
             Container(

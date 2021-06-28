@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:our_app/Courses/loops/Loops.dart';
 import 'package:our_app/constants.dart';
-import 'package:our_app/Screens/Principale/Principale.dart';
-import 'package:our_app/Screens/Profile/ProfileTeacher.dart';
-import 'package:our_app/Screens/Search/search.dart';
-import 'package:our_app/Screens/chating/chat.dart';
-import 'package:our_app/Screens/Notification/notification.dart';
 import 'package:our_app/components/RoundedButton.dart';
 
 class StringsScreen extends StatefulWidget {
