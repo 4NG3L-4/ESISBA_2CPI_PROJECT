@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:our_app/Screens/Principale/Principale.dart';
 import 'package:our_app/Screens/Principale/PrincipaleStudent.dart';
 
-import 'package:our_app/Screens/Principale/Principale.dart';
-import 'package:our_app/Screens/Principale/PrincipaleTeacher.dart';
-
 import 'package:our_app/Screens/Signup/SignUpScreen.dart';
+import 'package:our_app/components/RoundedButton.dart';
 import 'package:our_app/constants.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:our_app/Services/auth.dart';
 
 class Body extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,17 +21,25 @@ class Body extends StatelessWidget {
 //login
 
 class LoginPage extends StatefulWidget {
+  
   @override
   _LoginPageState createState() => _LoginPageState();
-}
+}    final GlobalKey<FormState> _key = GlobalKey();
+
 
 class _LoginPageState extends State<LoginPage> {
-  final _passwordcontroller = TextEditingController();
-  String email, password;
+  
+   final _passwordController = TextEditingController();
+  final _emailController = TextEditingController();
+       final AuthenticationService _auth = AuthenticationService();
+
+
+    String email, password;
   Widget _buildEmailRow() {
     return Padding(
       padding: EdgeInsets.all(0.025),
       child: TextFormField(
+        controller: _emailController,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         cursorColor: myLightBlue,
         decoration: InputDecoration(
@@ -61,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
     return Padding(
       padding: EdgeInsets.all(0.0001),
       child: TextFormField(
-        controller: _passwordcontroller,
+        controller: _passwordController,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         cursorColor: myLightBlue,
         decoration: InputDecoration(
@@ -72,8 +81,8 @@ class _LoginPageState extends State<LoginPage> {
         ),
         obscureText: true,
         validator: (value) {
-          if (value.isEmpty || value.length < 5) {
-            return 'password must be more than 4 characters';
+          if (value.isEmpty || value.length < 7) {
+            return 'password must be more than 7 characters';
           }
           return null;
         },
@@ -106,24 +115,49 @@ class _LoginPageState extends State<LoginPage> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Container(
-          height: 1.4 * (MediaQuery.of(context).size.height / 20),
-          width: 5 * (MediaQuery.of(context).size.width / 10),
+          //height: 1.4 * (MediaQuery.of(context).size.height / 20),
+          //width: 5 * (MediaQuery.of(context).size.width / 10),
           margin: EdgeInsets.all(20),
-          child: RaisedButton(
+          child: RoundedButton(
+                        color: myDarkBlue,
+                        text: "LOGIN",
+                        textColor: myLightWhite,
+                        press: () {
+                          if(_key.currentState.validate()){
+                            signInUser();
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return PrincipaleScreen();
+                              },
+                            ),
+                          );
+                          }
+                        },
+                      ),
+          /*
+          RaisedButton(
             elevation: 5.0,
             color: myDarkBlue,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30.0),
             ),
+            //add login function
             onPressed: () {
+              if (_key.currentState.validate()) {
+               //signInUser();
+                              
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return PrincipaleStudentScreen();
-                  },
+                    return PrincipaleScreen();
+                  }
+              
                 ),
               );
+              }
             },
             child: Text(
               "Login",
@@ -133,7 +167,7 @@ class _LoginPageState extends State<LoginPage> {
                 fontSize: MediaQuery.of(context).size.height / 40,
               ),
             ),
-          ),
+          ),*/
         )
       ],
     );
@@ -278,5 +312,16 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+ void signInUser() async {
+    dynamic authResult =
+        await _auth.loginUser(_emailController.text,_passwordController.text);
+    if (authResult == null) {
+      print('Sign in error. could not be able to login');
+    } else {
+      _emailController.clear();
+      _passwordController.clear();
+
+    }
   }
 }
