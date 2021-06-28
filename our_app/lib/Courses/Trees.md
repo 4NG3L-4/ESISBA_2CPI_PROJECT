@@ -43,10 +43,10 @@ A tree whose elements have at most 2 children . Since each element in a binary t
  - ## Reading  a tree: (parcours):
                      A
 
-             B                I
-                                                           C         F              J             M
+            B                 I
+       C          F        J        M
 
-                                                        D    E   G    H      K     L      N        O   	                      
+     D    E    G     H  K     L  N     O   	                      
                                                        
                                                     
 - ### Parcours en largeur:

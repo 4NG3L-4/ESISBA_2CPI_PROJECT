@@ -5,9 +5,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:our_app/constants.dart';
 import 'package:our_app/Screens/Login/login_screen.dart';
 import 'package:our_app/Services/auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class SignUpStudentScreen extends StatelessWidget {
   final GlobalKey<FormState> _formkey = GlobalKey();
+  final _firstNameController = TextEditingController();
+  final _lastNameController = TextEditingController();
   final _passwordController = TextEditingController();
   final _emailController = TextEditingController();
   final _confirmpasswordcontroller = TextEditingController();
@@ -61,6 +64,7 @@ class SignUpStudentScreen extends StatelessWidget {
                         SizedBox(height: 20, width: 20),
                         //First name
                         TextFormField(
+                          controller: _firstNameController,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           cursorColor: myLightBlue,
                           decoration: InputDecoration(
@@ -80,6 +84,7 @@ class SignUpStudentScreen extends StatelessWidget {
                         SizedBox(height: 20, width: 20),
                         //Last name
                         TextFormField(
+                          controller: _lastNameController,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           cursorColor: myLightBlue,
                           decoration: InputDecoration(
@@ -269,13 +274,21 @@ class SignUpStudentScreen extends StatelessWidget {
 // *************************************************************
   void createUser() async {
     dynamic result = await _auth.createNewUser(
-        _emailController.text, _passwordController.text);
+        _emailController.text,
+        _passwordController.text,
+        _firstNameController.text,
+        _lastNameController.text,
+        "Student",
+        "");
     if (result == null) {
       print('Email is not valid');
     } else {
       print(result.toString());
       _passwordController.clear();
       _emailController.clear();
+      _firstNameController.clear();
+      _lastNameController.clear();
+
       // Navigator.pop(context);
 
     }
