@@ -313,6 +313,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+  //fonction 
  void signInUser() async {
     dynamic authResult =
         await _auth.loginUser(_emailController.text,_passwordController.text);
