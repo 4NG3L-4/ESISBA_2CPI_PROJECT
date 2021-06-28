@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:our_app/Screens/chating/Comments.dart';
 import 'package:our_app/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class ChatCard extends StatelessWidget {
+class ChatCard extends StatefulWidget {
   final String name;
   final String messageText;
   final String image;
+
   ChatCard(
       {@required this.name, @required this.messageText, @required this.image});
+
+  @override
+  _ChatCardState createState() => _ChatCardState();
+}
+
+class _ChatCardState extends State<ChatCard> {
+  bool liked = false;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -30,43 +40,57 @@ class ChatCard extends StatelessWidget {
                       margin: EdgeInsets.only(left: 10, top: 10),
                       child: CircleAvatar(
                         child: SvgPicture.asset(
-                          image,
+                          widget.image,
                         ),
                       ),
                     ),
                     SizedBox(width: 20),
                     Text(
-                      name,
+                      widget.name,
                     ),
                   ],
                 ),
                 Container(
-                  child: Text(messageText),
+                  child: Text(widget.messageText),
                 ),
-                SizedBox(height: 20),
                 Padding(
                   padding: const EdgeInsets.only(left: 15),
                   child: Row(
                     children: <Widget>[
                       SizedBox(width: 20),
-                      SvgPicture.asset(
-                        "assets/icons/heart.svg",
-                        height: 25,
-                        width: 25,
-                        color: myDarkBlue,
-                      ),
-                      SizedBox(width: 15),
+                      IconButton(
+                          icon: Icon(
+                              liked ? Icons.favorite : Icons.favorite_border,
+                              color: myDarkBlue),
+                          onPressed: () {
+                            setState(() {
+                              liked = !liked;
+                            });
+                          }),
+                      SizedBox(width: 5),
                       Text(
                         "Likes",
                       ),
                       SizedBox(width: 25),
-                      SvgPicture.asset(
-                        "assets/icons/speech-bubble.svg",
-                        height: 25,
-                        width: 25,
-                        color: myDarkBlue,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return CommentsScreen();
+                              },
+                            ),
+                          );
+                        },
+                        child: SvgPicture.asset(
+                          "assets/icons/speech-bubble.svg",
+                          height: 25,
+                          width: 25,
+                          color: myDarkBlue,
+                        ),
                       ),
-                      SizedBox(width: 15),
+                      SizedBox(width: 10),
                       Text(
                         "Comments",
                       ),

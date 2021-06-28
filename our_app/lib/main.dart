@@ -13,15 +13,15 @@ class MyApp extends StatelessWidget {
       // Initialize FlutterFire
       future: Firebase.initializeApp(),
       builder: (context, snapshot) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: myDarkBlue,
-        scaffoldBackgroundColor: Colors.white,
-      ),
-      home: WelcomeScreen(),
-      );
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            primaryColor: myDarkBlue,
+            scaffoldBackgroundColor: Colors.white,
+          ),
+          home: WelcomeScreen(),
+        );
       },
     );
-   }
+  }
 }

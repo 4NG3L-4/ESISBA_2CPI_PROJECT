@@ -9,24 +9,62 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
+  final String username = "Ines";
+  final String ourimage = "assets/icons/teacher.svg";
   List<ChatUsers> chatUsers = [
     ChatUsers(
         name: "Med Yassim",
         messageText: "I need help!",
         image: "assets/icons/teacher.svg"),
     ChatUsers(
+        name: "Yasmine Bencheikh",
+        messageText: "I have an awesome informations for you",
+        image: "assets/icons/student.svg"),
+    ChatUsers(
         name: "Youcef Daoudi",
         messageText: "what do you think of this?",
+        image: "assets/icons/teacher.svg"),
+    ChatUsers(
+        name: "Manel Mansouri",
+        messageText: "I have an awesome informations for you",
         image: "assets/icons/student.svg"),
     ChatUsers(
         name: "Khaled Akid",
         messageText: "Look what I found in this course...",
         image: "assets/icons/teacher.svg"),
     ChatUsers(
-        name: "Yacine Bey",
+        name: "Wafaa Slimani",
+        messageText: "I have an awesome informations for you",
+        image: "assets/icons/teacher.svg"),
+    ChatUsers(
+        name: "Ismail bellaouedj",
         messageText: "I have an awesome informations for you",
         image: "assets/icons/student.svg"),
+    ChatUsers(
+        name: "Amira Saria",
+        messageText: "I have an awesome informations for you",
+        image: "assets/icons/teacher.svg"),
   ];
+  void _addComment(String val) {
+    setState(() {
+      chatUsers
+          .add(ChatUsers(name: username, messageText: val, image: ourimage));
+    });
+  }
+
+  Widget _buildCommentsList() {
+    return ListView.builder(itemBuilder: (context, index) {
+      if (index < chatUsers.length) {
+        return _buildCommentsItem(chatUsers[index].messageText,
+            chatUsers[index].name, chatUsers[index].image);
+      }
+    });
+  }
+
+  ChatCard _buildCommentsItem(String messageText, String name, String image) {
+    return ChatCard(messageText: messageText, name: name, image: image);
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -50,26 +88,34 @@ class _ChatScreenState extends State<ChatScreen> {
                 labelText: "add comment",
                 labelStyle: TextStyle(color: myDarkBlue),
                 border: OutlineInputBorder(
-                    borderSide: BorderSide.none,
-                    borderRadius: BorderRadius.circular(30)),
+                  borderSide: BorderSide.none,
+                  borderRadius: BorderRadius.circular(30),
+                ),
                 fillColor: myLightWhite,
                 filled: true,
               ),
+              onSubmitted: (String comment) {
+                _addComment(comment);
+              },
             ),
+            /*Column(
+              children: <Widget>[
+                _buildCommentsList(),
+              ],
+            ),*/
             Padding(
               padding: const EdgeInsets.only(top: 60),
               child: ListView.builder(
-                itemCount: chatUsers.length,
-                shrinkWrap: true,
-                padding: EdgeInsets.only(top: 16),
-                itemBuilder: (context, index) {
-                  return ChatCard(
-                    name: chatUsers[index].name,
-                    messageText: chatUsers[index].messageText,
-                    image: chatUsers[index].image,
-                  );
-                },
-              ),
+                  itemCount: chatUsers.length,
+                  shrinkWrap: true,
+                  padding: EdgeInsets.only(top: 16),
+                  itemBuilder: (context, index) {
+                    return ChatCard(
+                      name: chatUsers[index].name,
+                      messageText: chatUsers[index].messageText,
+                      image: chatUsers[index].image,
+                    );
+                  }),
             ),
           ],
         ),
