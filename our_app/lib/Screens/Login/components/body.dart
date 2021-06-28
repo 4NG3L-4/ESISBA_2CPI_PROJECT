@@ -8,7 +8,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:our_app/Services/auth.dart';
 
 class Body extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,20 +19,18 @@ class Body extends StatelessWidget {
 //login
 
 class LoginPage extends StatefulWidget {
-  
   @override
   _LoginPageState createState() => _LoginPageState();
-}    final GlobalKey<FormState> _key = GlobalKey();
+}
 
+final GlobalKey<FormState> _key = GlobalKey();
 
 class _LoginPageState extends State<LoginPage> {
-  
   final _passwordController = TextEditingController();
   final _emailController = TextEditingController();
-       final AuthenticationService _auth = AuthenticationService();
+  final AuthenticationService _auth = AuthenticationService();
 
-
-    String email, password;
+  String email, password;
   Widget _buildEmailRow() {
     return Padding(
       padding: EdgeInsets.all(0.025),
@@ -116,8 +113,8 @@ class _LoginPageState extends State<LoginPage> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Container(
-          //height: 1.4 * (MediaQuery.of(context).size.height / 20),
-          //width: 5 * (MediaQuery.of(context).size.width / 10),
+          height: 1.4 * (MediaQuery.of(context).size.height / 20),
+          width: 5 * (MediaQuery.of(context).size.width / 10),
           margin: EdgeInsets.all(20),
           // ignore: deprecated_member_use
           child: RaisedButton(
@@ -129,16 +126,16 @@ class _LoginPageState extends State<LoginPage> {
             //add login function
             onPressed: () {
               if (_key.currentState.validate()) {
-               //signInUser();
-                              
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return PrincipaleScreen();
-                  },
-                ),
-              );
+                //signInUser();
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return PrincipaleScreen();
+                    },
+                  ),
+                );
               }
             },
             child: Text(
@@ -296,16 +293,16 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-  //fonction 
- void signInUser() async {
+
+  //fonction
+  void signInUser() async {
     dynamic authResult =
-        await _auth.loginUser(_emailController.text,_passwordController.text);
+        await _auth.loginUser(_emailController.text, _passwordController.text);
     if (authResult == null) {
       print('Sign in error. could not be able to login');
     } else {
       _emailController.clear();
       _passwordController.clear();
-
     }
   }
 }

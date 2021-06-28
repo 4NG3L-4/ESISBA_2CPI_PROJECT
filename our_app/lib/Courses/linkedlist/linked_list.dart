@@ -24,54 +24,57 @@ class LinkedlistScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Center(
+            Container(
+                margin: EdgeInsets.only(top: 150, left: 50),
                 child: RoundedButton(
-              color: myLightWhite,
-              text: 'Pointer',
-              textColor: myLightBlue,
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return PointerScreen();
-                    },
-                  ),
-                );
-              },
-            )),
-            Center(
+                  color: myLightWhite,
+                  text: 'Pointer',
+                  textColor: myLightBlue,
+                  press: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return PointerScreen();
+                        },
+                      ),
+                    );
+                  },
+                )),
+            Container(
+                margin: EdgeInsets.only(top: 250, left: 50),
                 child: RoundedButton(
-              color: myLightWhite,
-              text: 'Linked List',
-              textColor: myLightBlue,
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return ListScreen();
-                    },
-                  ),
-                );
-              },
-            )),
-            Center(
+                  color: myLightWhite,
+                  text: 'Linked List',
+                  textColor: myLightBlue,
+                  press: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return ListScreen();
+                        },
+                      ),
+                    );
+                  },
+                )),
+            Container(
+                margin: EdgeInsets.only(top: 350, left: 50),
                 child: RoundedButton(
-              color: myLightWhite,
-              text: 'Exercice',
-              textColor: myLightBlue,
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return ExerciceScreen();
-                    },
-                  ),
-                );
-              },
-            )),
+                  color: myLightWhite,
+                  text: 'Exercice',
+                  textColor: myLightBlue,
+                  press: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return ExerciceScreen();
+                        },
+                      ),
+                    );
+                  },
+                )),
           ],
         ),
       ),
