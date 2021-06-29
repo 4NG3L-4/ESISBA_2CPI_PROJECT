@@ -55,19 +55,6 @@ class _ProfileTeacherScreenState extends State<ProfileTeacherScreen> {
                 ),
               ),
             ),
-            IconButton(
-              icon: Icon(Icons.menu, color: myDarkBlue),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return CommentsScreen();
-                    },
-                  ),
-                );
-              },
-            ),
             Align(
               alignment: Alignment.topCenter,
               child: Column(
