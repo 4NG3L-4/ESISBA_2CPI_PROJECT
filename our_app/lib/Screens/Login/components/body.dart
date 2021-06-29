@@ -179,8 +179,7 @@ class _LoginPageState extends State<LoginPage> {
                 Radius.circular(53),
               ),
               //container white box
-              child: Form(
-                key: _key,
+              child: Container(
                 child: SingleChildScrollView(
                     child: Container(
                   height: MediaQuery.of(context).size.height * 0.585,
@@ -324,11 +323,14 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                _buildContainer(),
-              ],
+            Form(
+              key: _key,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  _buildContainer(),
+                ],
+              ),
             )
           ],
         ),

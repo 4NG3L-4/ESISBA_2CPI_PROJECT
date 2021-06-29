@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:our_app/Courses/Strings.dart';
-import 'package:our_app/Courses/Trees.dart';
 import 'package:our_app/Menu/menu.dart';
 import 'package:our_app/Screens/Profile/ProfileStudent.dart';
 import 'package:our_app/constants.dart';
@@ -23,7 +22,6 @@ class _PrincipaleScreenState extends State<PrincipaleScreen> {
     NotificationScreen(),
     SearchScreen(),
     ProfileTeacherScreen(),
-    StringsScreen(),
     MenuScreen(),
   ];
 
@@ -95,7 +93,6 @@ class _PrincipaleStScreenState extends State<PrincipaleStScreen> {
     NotificationScreen(),
     SearchScreen(),
     ProfileStudentScreen(),
-    StringsScreen(),
     MenuScreen(),
   ];
 
