@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:our_app/Courses/Strings.dart';
 import 'package:our_app/Courses/Trees.dart';
+import 'package:our_app/Menu/menu.dart';
 import 'package:our_app/Screens/Profile/ProfileStudent.dart';
 import 'package:our_app/constants.dart';
 import 'package:our_app/Screens/Principale/PrincipaleStudent.dart';
@@ -23,7 +24,7 @@ class _PrincipaleScreenState extends State<PrincipaleScreen> {
     SearchScreen(),
     ProfileTeacherScreen(),
     StringsScreen(),
-    TreesScreen(),
+    MenuScreen(),
   ];
 
   @override
@@ -37,6 +38,7 @@ class _PrincipaleScreenState extends State<PrincipaleScreen> {
           buildBarNavItem(Icons.notifications, 2, NotificationScreen()),
           buildBarNavItem(Icons.search, 3, SearchScreen()),
           buildBarNavItem(Icons.person, 4, ProfileTeacherScreen()),
+          buildBarNavItem(Icons.menu, 5, MenuScreen()),
         ],
       ),
     );
@@ -51,7 +53,7 @@ class _PrincipaleScreenState extends State<PrincipaleScreen> {
       },
       child: Container(
         height: 60,
-        width: MediaQuery.of(context).size.width / 5,
+        width: MediaQuery.of(context).size.width / 6,
         decoration: index == _selectedItemIndex
             ? BoxDecoration(
                 border: Border(
@@ -94,7 +96,7 @@ class _PrincipaleStScreenState extends State<PrincipaleStScreen> {
     SearchScreen(),
     ProfileStudentScreen(),
     StringsScreen(),
-    TreesScreen(),
+    MenuScreen(),
   ];
 
   @override
@@ -108,6 +110,7 @@ class _PrincipaleStScreenState extends State<PrincipaleStScreen> {
           buildBarNavItem(Icons.notifications, 2, NotificationScreen()),
           buildBarNavItem(Icons.search, 3, SearchScreen()),
           buildBarNavItem(Icons.person, 4, ProfileStudentScreen()),
+          buildBarNavItem(Icons.menu, 5, MenuScreen()),
         ],
       ),
     );
@@ -122,7 +125,7 @@ class _PrincipaleStScreenState extends State<PrincipaleStScreen> {
       },
       child: Container(
         height: 60,
-        width: MediaQuery.of(context).size.width / 5,
+        width: MediaQuery.of(context).size.width / 6,
         decoration: index == _selectedItemIndex
             ? BoxDecoration(
                 border: Border(

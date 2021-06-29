@@ -35,91 +35,93 @@ class _PrincipaleStudentScreenState extends State<PrincipaleStudentScreen> {
             Center(
               widthFactor: double.infinity,
               heightFactor: double.infinity,
-              child: Card(
-                color: myLightWhite,
-                margin: EdgeInsets.only(top: 50),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(25),
-                ),
-                child: Center(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      Container(
-                        child: Principalecoursestudent(
-                          nCourse: "Course1",
-                          name: "Strings",
+              child: SingleChildScrollView(
+                child: Card(
+                  color: myLightWhite,
+                  margin: EdgeInsets.only(top: 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  child: Center(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Container(
+                          child: Principalecoursestudent(
+                            nCourse: "Course1",
+                            name: "Strings",
+                            press: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return StringsScreen();
+                                  },
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                        Principalecoursestudent(
+                          nCourse: "Course2",
+                          name: "Loops",
                           press: () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return StringsScreen();
+                                  return LoopsScreen();
                                 },
                               ),
                             );
                           },
                         ),
-                      ),
-                      Principalecoursestudent(
-                        nCourse: "Course2",
-                        name: "Loops",
-                        press: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return LoopsScreen();
-                              },
-                            ),
-                          );
-                        },
-                      ),
-                      Principalecoursestudent(
-                        nCourse: "Course3",
-                        name: "Arrays",
-                        press: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return ArraysScreen();
-                              },
-                            ),
-                          );
-                        },
-                      ),
-                      Principalecoursestudent(
-                        nCourse: "Course4",
-                        name: "Linked_List",
-                        press: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return LinkedlistScreen();
-                              },
-                            ),
-                          );
-                        },
-                      ),
-                      Principalecoursestudent(
-                        nCourse: "Course5",
-                        name: "Trees",
-                        press: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return TreesScreen();
-                              },
-                            ),
-                          );
-                        },
-                      ),
-                    ],
+                        Principalecoursestudent(
+                          nCourse: "Course3",
+                          name: "Arrays",
+                          press: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return ArraysScreen();
+                                },
+                              ),
+                            );
+                          },
+                        ),
+                        Principalecoursestudent(
+                          nCourse: "Course4",
+                          name: "Linked_List",
+                          press: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return LinkedlistScreen();
+                                },
+                              ),
+                            );
+                          },
+                        ),
+                        Principalecoursestudent(
+                          nCourse: "Course5",
+                          name: "Trees",
+                          press: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return TreesScreen();
+                                },
+                              ),
+                            );
+                          },
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
