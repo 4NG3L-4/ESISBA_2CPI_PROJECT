@@ -140,7 +140,7 @@ class _LoginPageState extends State<LoginPage> {
                     if (_key.currentState.validate()) {
                       signInUser();
 
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                           builder: (context) {
