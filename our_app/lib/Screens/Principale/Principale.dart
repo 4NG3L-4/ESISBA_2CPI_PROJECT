@@ -22,7 +22,6 @@ class _PrincipaleScreenState extends State<PrincipaleScreen> {
     NotificationScreen(),
     SearchScreen(),
     ProfileTeacherScreen(),
-    StringsScreen(),
     MenuScreen(),
   ];
 

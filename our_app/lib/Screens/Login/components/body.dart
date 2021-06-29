@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:our_app/Screens/Principale/Principale.dart';
-
 import 'package:our_app/Screens/Signup/SignUpScreen.dart';
 import 'package:our_app/constants.dart';
 import 'package:flutter_svg/svg.dart';
@@ -134,7 +133,7 @@ class _LoginPageState extends State<LoginPage> {
                   if (_key.currentState.validate()) {
                     signInUser();
 
-                    Navigator.push(
+                    Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                         builder: (context) {
@@ -155,7 +154,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }
@@ -171,8 +170,7 @@ class _LoginPageState extends State<LoginPage> {
                 Radius.circular(53),
               ),
               //container white box
-              child: Form(
-                key: _key,
+              child: Container(
                 child: SingleChildScrollView(
                     child: Container(
                   height: MediaQuery.of(context).size.height * 0.585,
@@ -298,17 +296,15 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 100.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    _buildContainer(),
-                  ],
-                ),
+            Form(
+              key: _key,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  _buildContainer(),
+                ],
               ),
-            )
+            ),
           ],
         ),
       ),
