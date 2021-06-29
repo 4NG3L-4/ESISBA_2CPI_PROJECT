@@ -5,7 +5,6 @@ import 'package:our_app/Screens/Signup/SignUpScreen.dart';
 import 'package:our_app/constants.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:our_app/Services/auth.dart';
-import 'package:our_app/Services/auth.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -331,7 +330,7 @@ class _LoginPageState extends State<LoginPage> {
                   _buildContainer(),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
