@@ -3,8 +3,24 @@ import 'package:flutter/material.dart';
 class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("Settings page !"),
+    Size size = MediaQuery.of(context).size;
+    return SafeArea(
+      child: Scaffold(
+        body: Stack(
+          children: <Widget>[
+            Container(
+              width: double.infinity,
+              height: size.height,
+              decoration: BoxDecoration(
+                color: Colors.white,
+              ),
+            ),
+            Container(
+              child: Text("Settings page !"),
+            )
+          ],
+        ),
+      ),
     );
   }
 }

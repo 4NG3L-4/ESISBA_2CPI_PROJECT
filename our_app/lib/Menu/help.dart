@@ -86,7 +86,7 @@ class HelpScreen extends StatelessWidget {
                       left: 10,
                     ),
                     child: Text(
-                        "   In navigation bar there is a message icon after reaching that bottom we will find the questions posed and it allows you to add a comment to answer or ask.\n\ Teacher profile and student profile the difference between those is the teacher can add his own courses and post them in (name) and all users can see and access then in the home menu in icon “OUR TEACHERS”.\n\ "),
+                        "   In navigation bar there is a message icon after reaching that bottom we will find the questions posed and it allows you to add a comment to answer or ask.\n\ Teacher profile and student profile the difference between those is the teacher can add his own courses and post them in (name) and all users can see and access then in the home menu in icon “OUR TEACHERS”.\n\ \n\ Teacher: \n\ "),
                   ),
                   Container(
                     margin: EdgeInsets.only(
@@ -94,7 +94,7 @@ class HelpScreen extends StatelessWidget {
                       right: 120,
                     ),
                     child: Text(
-                      "   I have a problem with my password? ",
+                      "   how I can add my courses? ",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 14,
@@ -107,7 +107,7 @@ class HelpScreen extends StatelessWidget {
                       left: 10,
                     ),
                     child: Text(
-                        "   After felling the password fields there’s a control that u should respect like more than 8 characters…\n\ "),
+                        "  You need to acces your profile page from the navigtion bar below, and you'll find the button \"\ Add Course\"\. After the validation of your course from the admin it'll be published on your profile only!\n\ Student:\n\  "),
                   ),
                   Container(
                     margin: EdgeInsets.only(
@@ -115,7 +115,7 @@ class HelpScreen extends StatelessWidget {
                       right: 120,
                     ),
                     child: Text(
-                      "   I forget my password? ",
+                      "   How I can track my progress?\n\ ",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 14,
@@ -128,7 +128,7 @@ class HelpScreen extends StatelessWidget {
                       left: 10,
                     ),
                     child: Text(
-                        "  If you forget your password click on I forget my password the server will send an email to recuperate it and you have to make another one. \n\ In the end if u have any problem, bug or suggestion don’t hesitate to send an  email to our administrator. \n\ "),
+                        " Every time you solve any quizz from the courses of your principale page, your progress will change and appear in your profile page. \n\ \n\ In the end if u have any problem, bug or suggestion don’t hesitate to send an  email to our administrator. \n\ "),
                   ),
                   Container(
                     margin: EdgeInsets.only(right: 220),
